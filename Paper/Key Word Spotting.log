@@ -1,93 +1,117 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  27 APR 2020 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  27 APR 2020 14:49
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
 LaTeX2e <2018-04-01> patch level 5
-(IEEEtran.cls
-Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.
+cls"
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
 \@IEEEtrantmpcountA=\count80
 \@IEEEtrantmpcountB=\count81
+\@IEEEtrantmpcountC=\count82
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen104
+\@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen105
-\CLASSINFOnormalsizeunitybaselineskip=\dimen106
-\IEEEnormaljot=\dimen107
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
-\IEEEilabelindentA=\dimen108
-\IEEEilabelindentB=\dimen109
-\IEEEilabelindent=\dimen110
-\IEEEelabelindent=\dimen111
-\IEEEdlabelindent=\dimen112
-\IEEElabelindent=\dimen113
-\IEEEiednormlabelsep=\dimen114
-\IEEEiedmathlabelsep=\dimen115
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
 \IEEEiedtopsep=\skip41
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@IEEEsubequation=\count86
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@IEEEsubequation=\count87
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
-\c@figure=\count87
-\c@table=\count88
-\@IEEEeqnnumcols=\count89
-\@IEEEeqncolcnt=\count90
-\@IEEEsubeqnnumrollback=\count91
-\@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count92
-\@IEEEtranrubishbin=\box26
+\c@figure=\count88
+\c@table=\count89
+\@IEEEeqnnumcols=\count90
+\@IEEEeqncolcnt=\count91
+\@IEEEsubeqnnumrollback=\count92
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count93
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count94
+\@IEEEtranrubishbin=\box27
 ) ("Key Word Spotting.aux")
 \openout1 = `"Key Word Spotting.aux"'.
 
@@ -103,6 +127,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 330.
 LaTeX Font Info:    ... okay on input line 330.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 330.
 LaTeX Font Info:    ... okay on input line 330.
+
+-- Lines per column: 56 (exact).
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 365.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -111,7 +137,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 512.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 512.
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -130,20 +155,20 @@ Before submitting the final camera ready copy, remember to:
 ]
 ("Key Word Spotting.aux") ) 
 Here is how much of TeX's memory you used:
- 932 strings out of 492970
- 16672 string characters out of 3126594
- 77205 words of memory out of 3000000
- 4867 multiletter control sequences out of 15000+200000
+ 1064 strings out of 492970
+ 19854 string characters out of 3126594
+ 82523 words of memory out of 3000000
+ 4998 multiletter control sequences out of 15000+200000
  38728 words of font info for 72 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 26i,8n,19p,243b,242s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,7n,19p,217b,236s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/urw/times/utmb8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/urw/times/utmbi8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/lagge/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (1 page, 48093 bytes).
+Output written on "Key Word Spotting.pdf" (1 page, 48092 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
