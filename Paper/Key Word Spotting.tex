@@ -49,10 +49,15 @@ tween achieving high detection accuracy and having a small footprint.
 
 In this work we focus on recurrent neural networks (RNNs), a class of models that has been successfully applied to small-footprint keyword spotting in recent years.
 
-DA METTERE ALLA FINE DELL'INTRODUZIONE: The rest of this paper is as follows. In Section 2 we give an overview of the... Section 3 presents... The experimental setup is described in Section 4, while results comparing... are presented in Section 5. Finally, Section 6 concludes the paper and discusses future works.
+SPIEGARE PERCHè LE RNN VANNO BENE PER QUESTO TASK
 
 DA INSERIRE DA QUALCHE PARTE: Recurrent neural networks represent a ground-breaking advance in deep learning that has allowed researchers to successfully train deeper networks.
- 
+
+For this project we use the recently-released Google Speech Command Dataset as our benchmark.
+
+AGGIUNGERE QUALCOSA DA INTRO DI Attention-Based Models ... SOLO SE SERVE
+
+DA METTERE ALLA FINE DELL'INTRODUZIONE: This paper is structured as follows. In Section 2 we give an overview of the... Section 3 presents... The experimental setup is described in Section 4, while results comparing... are presented in Section 5. Finally, Section 6 concludes the paper and discusses future works. 
 \hfill June 29, 2020
 
 \subsection{Subsection Heading Here}
@@ -68,14 +73,19 @@ The first system similar to a modern ASR was built in the 1952 by researchers at
 This approach represented a significant shift from the simple pattern recognition methods that were based on templates (and a spectral distance measure), to a statistical method for speech processing and was possible thank to the incredible advances in the computer computational power obtained(?) in those years. In recent years, however, the HMMs faced the challenge of the introduction of Deep Learning and several architechtures that work well with these type of problems like Convolutional Neural Networks (CNN) shift-invariant in the data representation domain, and Recurrent Neural Networks (RNN) and their ability to store information.
 \section{Model implementation}
 This section describes our base model and its variants. All code necessary to replicate our experiment has been made oper source in our Github repository\footnote{https://github.com/ivaste/KeyWordSpotting}.
+\section{Evaluation}
+DA MODIFICARE We evaluated our models using Google’s Speech Commands Dataset, which was released in August 2017 under a Creative Commons license\footnote{https://research.googleblog.com/2017/08/launching-speech-commands-dataset.html}. The dataset contains 65,000
+one-second long utterances of 30 short words by thousands of
+different people, as well as background noise samples such as
+pink noise, white noise, and human-made sounds.
 \section{Conclusion}
 PRENDI SPUNTO DA QUESTO: This paper describes the application of deep residual learning and dilated convolutions to the keyword spotting problem. Our work is enabled by the recent release of Google’s Speech Commands Dataset, which provides a common benchmark for this task. Previously, related work was mostly incomparable because papers relied on private datasets. Our work establishes new, state-of-the-art, open-source reference models on this dataset that we encourage others to build on. For future work, we plan to compare our CNN-based approaches with an emerging family of models based on recurrent architectures. We have not undertaken such a study because there do not appear to be publicly-available reference implementations of such models, and the lack of a common benchmark makes comparisons difficult. The latter problem has been addressed, and it would be interesting to see how
 recurrent neural networks stack up against our approach.
 
 \section*{Acknowledgment}
+All the experiments were conducted using Keras and blabla libraries.
 
-
-The authors would like to thank...
+The authors would like to acknowledge the support of...
 
 
 \begin{thebibliography}{1}
