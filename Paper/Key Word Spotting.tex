@@ -40,24 +40,24 @@ adipiscing at ac lacus. Praesent id pellentesque orci.
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
-The goal of keyword spotting is to detect a relatively small set of predefined keywords in a stream of user utterances, usually in the context of an intelligent agent on a mobile phone or a consumer "smart home" device. With the rapid development of mobile devices, speech-related technologies are becoming increasingly popular. For example, Google offers the ability to search by voice on Android phones, while personal assistants such as Google Now, Apple’s Siri, Microsoft’s Cortana and Amazon’s Alexa, all uti-
-lize speech recognition to interact with these systems. Google has enabled a fully hands-free speech recognition experience, known as “Ok Google”, which continuously listens for specific keywords to initiate voice input. This keyword spotting (KWS) system runs on mobile devices, and therefore must have
-a small memory footprint and low computational power.
+The goal of \textit{keyword spotting} is to detect a relatively small set of predefined keywords in a stream of user utterances, often in the context of an intelligent agent on a mobile phone. 
 
-Keyword spotting can be used to detect “command triggers” such as “hey Siri”, which provide explicit cues for interactions directed at the device. It is additionally desirable that such models have a small footprint (for example, measured in the number of model parameters) so they can be deployed on low power and performance-limited devices. In recent years, neural networks have been shown to provide effective solutions to the small-footprint keyword spotting problem. Research typically focuses on a tradeoff be-
-tween achieving high detection accuracy and having a small footprint.
+With the rapid development of mobile devices, speech-related technologies are nowadays becoming very popular. For example, Google gives us the chance to search by voice on Android phones, while personal assistants (Google Now, Apple’s Siri, Amazon’s Alexa or Microsoft’s Cortana) use speech recognition to interact with these systems. Google has enabled a fully hands-free speech recognition experience, known as “Ok Google”, which continuously listens to what we say for specific keywords to initiate voice input. 
 
-In this work we focus on recurrent neural networks (RNNs), a class of models that has been successfully applied to small-footprint keyword spotting in recent years.
+Keyword spotting can be used to detect “command triggers” (“Hey Siri” for example) that provide explicit cues for interactions between the device and the human that gave such cue. It is also desirable that such models have a small footprint (for example, measured in the number of model parameters) so they can be deployed on low power and performance-limited devices. 
+
+In recent years, neural networks have been shown to provide effective solutions to the small-footprint keyword spotting problem. Research typically focuses on a tradeoff between achieving high accuracy and having a small footprint.
+
+In this work we focus on recurrent neural networks (RNNs), a ground-breaking advance in deep learning, a class of models that has been successfully applied to small-footprint keyword spotting in recent years.
 
 SPIEGARE PERCHè LE RNN VANNO BENE PER QUESTO TASK
 
-DA INSERIRE DA QUALCHE PARTE: Recurrent neural networks represent a ground-breaking advance in deep learning that has allowed researchers to successfully train deeper networks.
-
 For this project we use the recently-released Google Speech Command Dataset as our benchmark.
 
-AGGIUNGERE QUALCOSA DA INTRO DI Attention-Based Models ... SOLO SE SERVE
+(AGGIUNGERE QUALCOSA DA INTRO DI Attention-Based Models ... SOLO SE SERVE)
 
-DA METTERE ALLA FINE DELL'INTRODUZIONE: This paper is structured as follows. In Section 2 we give an overview of the... Section 3 presents... The experimental setup is described in Section 4, while results comparing... are presented in Section 5. Finally, Section 6 concludes the paper and discusses future works. 
+DA METTERE ALLA FINE DELL'INTRODUZIONE: This paper is structured as follows. In Section 2 we give an overview of the related work of the Keyword Spotting Problem, Section 3 presents the model implentation. The experimental setup is described in Section 4, while results comparing... are presented in Section 5. Finally, Section 6 concludes the paper and discusses future works.
+
 \hfill June 29, 2020
 
 \subsection{Subsection Heading Here}
@@ -78,6 +78,8 @@ DA MODIFICARE We evaluated our models using Google’s Speech Commands Dataset, 
 one-second long utterances of 30 short words by thousands of
 different people, as well as background noise samples such as
 pink noise, white noise, and human-made sounds.
+\section{Experimental Setup}
+\section{Results}
 \section{Conclusion}
 PRENDI SPUNTO DA QUESTO: This paper describes the application of deep residual learning and dilated convolutions to the keyword spotting problem. Our work is enabled by the recent release of Google’s Speech Commands Dataset, which provides a common benchmark for this task. Previously, related work was mostly incomparable because papers relied on private datasets. Our work establishes new, state-of-the-art, open-source reference models on this dataset that we encourage others to build on. For future work, we plan to compare our CNN-based approaches with an emerging family of models based on recurrent architectures. We have not undertaken such a study because there do not appear to be publicly-available reference implementations of such models, and the lack of a common benchmark makes comparisons difficult. The latter problem has been addressed, and it would be interesting to see how
 recurrent neural networks stack up against our approach.

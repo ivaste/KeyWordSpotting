@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  1 MAY 2020 15:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  5 MAY 2020 15:02
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -130,14 +130,10 @@ LaTeX Font Info:    ... okay on input line 6.
 
 -- Lines per column: 56 (exact).
 
-Underfull \hbox (badness 1902) in paragraph at lines 52--53
+Underfull \hbox (badness 1902) in paragraph at lines 53--54
 []\OT1/ptm/m/n/10 SPIEGARE PERCH[]e LE RNN VANNO BENE PER
  []
 
-[1{C:/Users/lagge/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 75.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -146,7 +142,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 75.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 75.
+[1{C:/Users/lagge/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 77--77
 [][][]\OT1/ptm/m/n/8 https://research.googleblog.com/2017/08/launching-speech-c
 ommands-
@@ -158,7 +157,7 @@ Underfull \hbox (badness 3679) in paragraph at lines 77--81
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 96--97
+Underfull \hbox (badness 2512) in paragraph at lines 98--99
 []\OT1/ptm/m/n/8 Jan Chorowski, Dzmitry Bah-danau, Dmitriy Serdyuk, Kyunghyun
  []
 
@@ -190,7 +189,7 @@ onts/type1/urw/times/utmb8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/lagge/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (2 pages, 62813 bytes).
+Output written on "Key Word Spotting.pdf" (2 pages, 62787 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
