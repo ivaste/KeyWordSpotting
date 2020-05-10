@@ -16,8 +16,8 @@
  - Chapter 5 on performance measurement
  
 ### [Speech Commands- A Dataset for Limited-Vocabulary Speech](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Speech%20Commands-%20A%20Dataset%20for%20Limited-Vocabulary%20Speech.pdf)
- - 2) INTRO
- - 4) Motivation
+ - 2INTRO
+ - 4 Motivation
  - 5.1, 5.2, 5.8
  - 6
  - 7.1, 7.2
