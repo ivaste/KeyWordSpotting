@@ -7,25 +7,10 @@
  - Accuracy 94%
  - 202K trainable parameters
  - Attention plots (log scale) to visualize what parts of the audio were most relevant
- - Confusion magrices
+ - Confusion matrices
  - Try augmenting audio samples with background noise
  - Try using pretrained models
  - Try stack pair of words form more complex commands and use sequence to sequence model or multiple attention layers
- 
-### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
- - Chapter 5 on performance measurement
- 
-### [Speech Commands- A Dataset for Limited-Vocabulary Speech](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Speech%20Commands-%20A%20Dataset%20for%20Limited-Vocabulary%20Speech.pdf)
- - 2INTRO
- - 4 Motivation
- - 5.1, 5.2, 5.8
- - 6
- - 7.1, 7.2
-
-### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting.pdf)
- - MAYBE performance maestre
- - MAYBE limiting multiplications
- - MAYBE limiting parameters
  
 ### [DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD SPOTTING](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/DEEP%20RESIDUAL%20LEARNING%20FOR%20SMALL-FOOTPRINT%20KEYWORD%20SPOTTING%20.pdf)
  - Intro
@@ -43,7 +28,32 @@
  - 3.1 per intro
  - not use residual connections in our network architecture, considering the memory overhead and added difficulty for hardware acceleration modules.
 
+### [Speech Commands - A Dataset for Limited-Vocabulary Speech](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Speech%20Commands-%20A%20Dataset%20for%20Limited-Vocabulary%20Speech.pdf)
+ - Describes the dataset
+ - 2 INTRO
+ - 4 Motivation
+ - Dataset description 5.1, 5.2, 5.8
+ - 6
+ - 7.1, 7.2
+
+### [Efficient keyword spotting using dilated convolutions and gating]()
+ - Gated activation units (works well with audio signals)
+ - Residual learning startegies like skip connections. Used to speedup convergence and adress the issue of vanishing gradients.
+ - Dilateted convolutions
+
+### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting.pdf)
+ - MAYBE performance masure
+ - MAYBE limiting multiplications
+ - MAYBE limiting parameters
  
+
+### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
+ - Chapter 5 on performance measurement
+ 
+
+
+
+
 
 
 
