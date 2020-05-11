@@ -22,12 +22,12 @@
  - 6
  - 7.1, 7.2
 
-### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting]()
+### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting.pdf)
  - MAYBE performance maestre
  - MAYBE limiting multiplications
  - MAYBE limiting parameters
  
-### [DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD SPOTTING]()
+### [DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD SPOTTING](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/DEEP%20RESIDUAL%20LEARNING%20FOR%20SMALL-FOOTPRINT%20KEYWORD%20SPOTTING%20.pdf)
  - Intro
  - trade-off accuracy small net
  - MFCC
