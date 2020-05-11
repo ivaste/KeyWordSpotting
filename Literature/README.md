@@ -22,6 +22,23 @@
  - 6
  - 7.1, 7.2
 
+### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting]()
+ - MAYBE performance maestre
+ - MAYBE limiting multiplications
+ - MAYBE limiting parameters
+ 
+### [DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD SPOTTING]()
+ - Intro
+ - trade-off accuracy small net
+ - MFCC
+ - Accuracy ROC AUC
+ - Training Parameters
+ 
+ 
+
+ 
+
+
 
 
 
