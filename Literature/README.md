@@ -36,7 +36,7 @@
  - 6
  - 7.1, 7.2
 
-### [Efficient keyword spotting using dilated convolutions and gating]()
+### [Efficient keyword spotting using dilated convolutions and gating](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Efficient_keyword_spotting_using_dilated_convolutions_and_gating.pdf)
  - Gated activation units (works well with audio signals)
  - Residual learning startegies like skip connections. Used to speedup convergence and adress the issue of vanishing gradients.
  - Dilateted convolutions
