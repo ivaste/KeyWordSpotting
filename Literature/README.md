@@ -34,7 +34,14 @@
  - Accuracy ROC AUC
  - Training Parameters
  
- 
+### [Small-Footprint Keyword Spotting on Raw Audio Data with Sinc-Convolutions]()
+ - works directly on raw audio signals. NO MFCC.
+ - 97.4% Accuracy, 62k parameters. SincConv+DSConv
+ - 97.3% Accuracy, 122k parameters. SincConv+GDSConv
+ - Sinc Convolution
+ - Depth-wise separable conv nets
+ - 3.1 per intro
+ - not use residual connections in our network architecture, considering the memory overhead and added difficulty for hardware acceleration modules.
 
  
 
