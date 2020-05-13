@@ -4,8 +4,7 @@
  - python library kapre for mel-scale
  - Different tasks: 20 commands, 12 commands, 35 words, left-right
  - Training parameters
- - Accuracy 94%
- - 202K trainable parameters
+ - Accuracy 94%, 202K parameters
  - Attention plots (log scale) to visualize what parts of the audio were most relevant
  - Confusion matrices
  - Try augmenting audio samples with background noise
@@ -19,7 +18,7 @@
  - Accuracy ROC AUC
  - Training Parameters
  
-### [Small-Footprint Keyword Spotting on Raw Audio Data with Sinc-Convolutions]()
+### [Small-Footprint Keyword Spotting on Raw Audio Data with Sinc-Convolutions](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Small-Footprint%20Keyword%20Spotting%20on%20Raw%20Audio%20Data%20with%20Sinc-Convolutions.pdf)
  - works directly on raw audio signals. NO MFCC.
  - 97.4% Accuracy, 62k parameters. SincConv+DSConv
  - 97.3% Accuracy, 122k parameters. SincConv+GDSConv
@@ -47,7 +46,7 @@
  - MAYBE other details on attention (Chapter 2)
 
 ### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting.pdf)
- - MAYBE performance masure
+ - MAYBE performance measure
  - MAYBE limiting multiplications
  - MAYBE limiting parameters
  
@@ -55,8 +54,23 @@
 ### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
  - Chapter 5 on performance measurement
  
-
-
+### [Temporal Convolution for Real-time Keyword Spotting on Mobile Devices]()
+ - Abstract
+ - Our dataset
+ - 96.6% Acc, 305K params, 5.7ms
+ - 96.1% Acc, 66K params, 1.1ms
+ - è un miglioramento del paper DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD...
+ - Metrics: Accuracy, #All Params, time(ms) on Google pixel 1
+ - INTRO
+ - We should not consider Multiplication as metrics because is an indirect alternative for the direct metric such as latency.
+ - Temporal Convolutional neural network. Empirically demostrated to reduce computation and increased performance in term of accuracy compared to 2Dconvs in KWS.
+ - There has been an increase in the use of 1D convolutions in acustics and speech domain.
+ - 1D conv along temporal axis of time-frequency rappresentations instead of convolving along th frequency axis or processing raw audio signals.
+ - Github code
+ - Data augmentation and preprocessing
+ - Training parameters
+ - Include FLOPs computed by tensorflow profiling tool
+ - ROC curves for models with corresponding values of AUC
 
 
 
