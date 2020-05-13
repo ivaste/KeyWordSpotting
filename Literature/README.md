@@ -41,7 +41,7 @@
  - Residual learning startegies like skip connections. Used to speedup convergence and adress the issue of vanishing gradients.
  - Dilateted convolutions
 
-### [Attention-Based Models for Speech Recognition}()
+### [Attention-Based Models for Speech Recognition](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Attention-Based%20Models%20for%20Speech%20Recognition.pdf)
  - 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences, for a total of 123 feature per frame
  - Each feature rescaled to have zeromean and unit variance over tht training set
  - MAYBE other details on attention (Chapter 2)
