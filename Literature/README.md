@@ -41,6 +41,11 @@
  - Residual learning startegies like skip connections. Used to speedup convergence and adress the issue of vanishing gradients.
  - Dilateted convolutions
 
+### [Attention-Based Models for Speech Recognition}()
+ - 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences, for a total of 123 feature per frame
+ - Each feature rescaled to have zeromean and unit variance over tht training set
+ - MAYBE other details on attention (Chapter 2)
+
 ### [Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Convolutional_Neural_Networks_for_Small_footprint_Keyword_Spotting.pdf)
  - MAYBE performance masure
  - MAYBE limiting multiplications
@@ -50,6 +55,7 @@
 ### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
  - Chapter 5 on performance measurement
  
+
 
 
 
