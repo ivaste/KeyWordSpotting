@@ -14,6 +14,7 @@
  - 1D conv along temporal axis of time-frequency rappresentations instead of convolving along th frequency axis or processing raw audio signals.
  - Github code
  - Data augmentation and preprocessing (background noise)
+ - 40MFCC features
  - Training parameters
  - Include FLOPs computed by tensorflow profiling tool
  - ROC curves for models with corresponding values of AUC
@@ -58,8 +59,14 @@
  - Residual learning startegies like skip connections. Used to speedup convergence and adress the issue of vanishing gradients.
  - Dilateted convolutions
 
+### [Hello Edge Keyword Spotting on Microcontrollers](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Hello%20Edge%20Keyword%20Spotting%20on%20Microcontrollers.pdf)
+ - Depth-wise separable CNN
+ - 2.1 Explanation of Input->frames->MFCC features
+ - Convolutional Recurrent Neural networks
+ - Our Dataset
+
 ### [Attention-Based Models for Speech Recognition](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Attention-Based%20Models%20for%20Speech%20Recognition.pdf)
- - 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences, for a total of 123 feature per frame
+ - 123 features: 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences, for a total of 123 feature per frame
  - Each feature rescaled to have zeromean and unit variance over tht training set
  - MAYBE other details on attention (Chapter 2)
 
@@ -71,11 +78,9 @@
 ### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
  - Chapter 5 on performance measurement
  
-### [Hello Edge Keyword Spotting on Microcontrollers]()
- - Depth-wise separable CNN
- - 2.1 Explanation of Input->frames->MFCC features
- - Convolutional Recurrent Neural networks
- - Our Dataset
+### [Human_Data_Analytics_Project]()
+ - Features: Log-Filterbanks ??
+ - 
  
 
 
