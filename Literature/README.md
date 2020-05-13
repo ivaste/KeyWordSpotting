@@ -1,5 +1,23 @@
 # Literature to use
 
+### [Temporal Convolution for Real-time Keyword Spotting on Mobile Devices](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Temporal_Convolution_for_Real_time_Keyword_Spotting_on_Mobile_Devices.pdf)
+ - Abstract
+ - Our dataset
+ - 96.6% Acc, 305K params, 5.7ms
+ - 96.1% Acc, 66K params, 1.1ms
+ - è un miglioramento del paper DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD...
+ - Metrics: Accuracy, #All Params, time(ms) on Google pixel 1
+ - INTRO
+ - We should not consider Multiplication as metrics because is an indirect alternative for the direct metric such as latency.
+ - Temporal Convolutional neural network. Empirically demostrated to reduce computation and increased performance in term of accuracy compared to 2Dconvs in KWS.
+ - There has been an increase in the use of 1D convolutions in acustics and speech domain.
+ - 1D conv along temporal axis of time-frequency rappresentations instead of convolving along th frequency axis or processing raw audio signals.
+ - Github code
+ - Data augmentation and preprocessing (background noise)
+ - Training parameters
+ - Include FLOPs computed by tensorflow profiling tool
+ - ROC curves for models with corresponding values of AUC
+
 ### [A neural attention model for speech command recognition](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/A%20neural%20attention%20model%20for%20speech%20command%20recognition.pdf)
  - python library kapre for mel-scale
  - Different tasks: 20 commands, 12 commands, 35 words, left-right
@@ -50,27 +68,16 @@
  - MAYBE limiting multiplications
  - MAYBE limiting parameters
  
-
 ### [Key-Word Spotting - The Base Technology for Speech Analytics](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Key-Word%20Spotting%20-%20The%20Base%20Technology%20for%20Speech%20Analytics.pdf)
  - Chapter 5 on performance measurement
  
-### [Temporal Convolution for Real-time Keyword Spotting on Mobile Devices]()
- - Abstract
- - Our dataset
- - 96.6% Acc, 305K params, 5.7ms
- - 96.1% Acc, 66K params, 1.1ms
- - è un miglioramento del paper DEEP RESIDUAL LEARNING FOR SMALL-FOOTPRINT KEYWORD...
- - Metrics: Accuracy, #All Params, time(ms) on Google pixel 1
- - INTRO
- - We should not consider Multiplication as metrics because is an indirect alternative for the direct metric such as latency.
- - Temporal Convolutional neural network. Empirically demostrated to reduce computation and increased performance in term of accuracy compared to 2Dconvs in KWS.
- - There has been an increase in the use of 1D convolutions in acustics and speech domain.
- - 1D conv along temporal axis of time-frequency rappresentations instead of convolving along th frequency axis or processing raw audio signals.
- - Github code
- - Data augmentation and preprocessing
- - Training parameters
- - Include FLOPs computed by tensorflow profiling tool
- - ROC curves for models with corresponding values of AUC
+### [Hello Edge Keyword Spotting on Microcontrollers]()
+ - Depth-wise separable CNN
+ - 2.1 Explanation of Input->frames->MFCC features
+ - Convolutional Recurrent Neural networks
+ - Our Dataset
+ 
+
 
 
 
