@@ -66,7 +66,7 @@
  - Our Dataset
 
 ### [Attention-Based Models for Speech Recognition](https://github.com/ivaste/KeyWordSpotting/blob/master/Literature/To%20Use/Attention-Based%20Models%20for%20Speech%20Recognition.pdf)
- - 123 features: 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences, for a total of 123 feature per frame
+ - 123 features: 40mel scale filterbank features togheter with energy in each frame, and first and second temporal differences. (40MFCC+40delta+40deltadelta+1Energy+1EnergyDeltaDelta) for a total of 123 feature per frame
  - Each feature rescaled to have zeromean and unit variance over tht training set
  - MAYBE other details on attention (Chapter 2)
 
