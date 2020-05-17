@@ -14,7 +14,7 @@ model.fit_generator(generator=training_generator,
 
 import numpy as np
 import tensorflow.keras
-
+import librosa
 
 class SpeechGen(tensorflow.keras.utils.Sequence):
     """
