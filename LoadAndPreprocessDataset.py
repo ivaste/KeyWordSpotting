@@ -6,11 +6,12 @@ Dataset files must be already in .npy format
 """
 
 import numpy as np
-import librosa # mfcc functions
-import pandas as pd #reading txt files
+import librosa 		# mfcc functions
+import pandas as pd # reading txt files
+import random 		# to shuffle dataset
 import os
 
-sr=16000
+sr=16000	#Sampling rate of audiofiles
 
 diCategories = {
             'yes': 0,
@@ -45,6 +46,11 @@ def loadDatasetFilenames():
 	for root, dirs, files in os.walk(basePath + '/train/'):
 		allWAVs += [root + '/' + f for f in files if f.endswith('.wav.npy') and root.endswith(categories)]
 	trainWAVs = list(set(allWAVs) - set(valWAVs) - set(testWAVs))
+	
+	#shuffle lists
+	random.shuffle(trainWAVs)
+	random.shuffle(valWAVs)
+	random.shuffle(testWAVs)
 	
 	#print("# of test: ",len(testWAVs))
 	#print("# of val: ",len(valWAVs))
