@@ -92,9 +92,9 @@ def loadBatch(filesList,batch_size=1000,dim=16000):
 ################ PREPROCESSING #################
 ################################################
 
-#12 MFCC + 12 DELTA +12 DELTADELTA
-def MFCC_DELTA_12(X,sr=16000):
-    features = np.empty((X.shape[0],36,126)) #12*3, ...
+#12 MFCC + DELTA + DELTADELTA
+def MFCC_DELTA(X,n_mfcc=12,sr=16000): #X: (n_examples,...) 
+    features = np.empty((X.shape[0],n_mfcc*3,126)) #12*3, ...
     for i,y in enumerate(X):
         S = librosa.feature.melspectrogram(y, sr=sr, n_fft=1024,
                                                 hop_length=128, power=1.0, #window='hann',
@@ -104,7 +104,7 @@ def MFCC_DELTA_12(X,sr=16000):
         log_S = librosa.power_to_db(S, ref=np.max)
 
         # Next, we'll extract the top 12 Mel-frequency cepstral coefficients (MFCCs)
-        mfcc        = librosa.feature.mfcc(S=log_S, n_mfcc=12)
+        mfcc        = librosa.feature.mfcc(S=log_S, n_mfcc=n_mfcc)
 
         # Let's pad on the first and second deltas while we're at it
         delta_mfcc  = librosa.feature.delta(mfcc)
@@ -112,3 +112,20 @@ def MFCC_DELTA_12(X,sr=16000):
 
         features[i] = np.concatenate((mfcc, delta_mfcc, delta2_mfcc), axis=0)
     return features
+
+
+
+def MFCC(X,n_mfcc=12,sr=16000):
+	features = np.empty((X.shape[0],n_mfcc,126))
+	for i,y in enumerate(X):
+		S = librosa.feature.melspectrogram(y, sr=sr, n_fft=1024,
+										hop_length=128, power=1.0,
+										n_mels=80, fmin=40.0, fmax=sr/2)
+
+		# Convert to log scale (dB). We'll use the peak power (max) as reference.
+		log_S = librosa.power_to_db(S, ref=np.max)
+
+		# Next, we'll extract the top n_mfcc Mel-frequency cepstral coefficients (MFCCs)
+		features[i]= librosa.feature.mfcc(S=log_S, n_mfcc=n_mfcc)
+
+	return features
