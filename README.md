@@ -16,6 +16,10 @@
 ## Usage
 .......
 
+### Download best model
+If you just wanto to download and use the best model in your application you need to...
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
