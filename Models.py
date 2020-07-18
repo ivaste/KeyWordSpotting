@@ -28,12 +28,22 @@ def SimpleNN(nCategories, inputShape, name="SimpleNN"):
 
 def SimpleCNN(nCategories, inputShape, name="SimpleCNN"):
 	inputs = keras.Input(shape=inputShape)
-	# dim  (120, 126, 1)
+	# dim Input=(120, 126, 1)
 	
-	x = layers.Conv2D(16, 64,strides=(2,2), activation='elu', padding='same')(inputs)
-	#x = layers.MaxPool2D(pool_size=16, strides=8)(x)
-	x = layers.Conv2D(16, 16,strides=(2,2), activation='elu', padding='same')(x)
-	#x = layers.MaxPool2D(pool_size=32, strides=8)(x)
+	x = layers.Conv2D(filters=16,
+					kernel_size=64,
+					strides=(2,2),
+					activation='elu',
+					padding='same',
+					kernel_initializer="he_normal")(inputs)
+	x = layers.MaxPool2D(pool_size=16, strides=8)(x)
+	x = layers.Conv2D(filters=16,
+					kernel_size=16,
+					strides=(2,2),
+					activation='elu',
+					padding='same',
+					kernel_initializer="he_normal")(x)
+	x = layers.MaxPool2D(pool_size=32, strides=8)(x)
 	x = layers.Flatten()(x)
 	output = layers.Dense(nCategories,
 						activation="softmax",
