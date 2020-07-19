@@ -8,3 +8,7 @@ Dataset/
 resources/.ipynb_checkpoints/
 sd_*/
 __pycache__/
+
+logs/
+output/
+models/
