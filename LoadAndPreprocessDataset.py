@@ -129,3 +129,17 @@ def MFCC(X,n_mfcc=12,sr=16000):
 		features[i]= librosa.feature.mfcc(S=log_S, n_mfcc=n_mfcc)
 
 	return features
+	
+	
+
+def melspect(X,nMels=80,sr=16000):
+	features = np.empty((X.shape[0],nMels,126))	#nExamples, nMels, n???
+	for i,y in enumerate(X):
+		S = librosa.feature.melspectrogram(y, sr=sr, n_fft=1024,
+										hop_length=128, power=1.0,
+										n_mels=nMels, fmin=40.0, fmax=sr/2)
+										
+		# Convert to log scale (dB). We'll use the peak power (max) as reference.
+		features[i]=librosa.power_to_db(S, ref=np.max)
+	
+	return features
