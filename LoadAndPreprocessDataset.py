@@ -143,3 +143,4 @@ def melspect(X,nMels=80,sr=16000):
 		features[i]=librosa.power_to_db(S, ref=np.max)
 	
 	return features
+	

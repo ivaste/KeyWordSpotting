@@ -67,13 +67,64 @@ def LeNet5(nCategories, inputShape, name="LeNet5-2FC-Reg"):
 
 
 
+# From paper https://www.researchgate.net/publication/332553888_End-to-End_Environmental_Sound_Classification_using_a_1D_Convolutional_Neural_Network
+def directCNN(nCategories,inputShape, name="directCNN"):
+	inputs = keras.Input(shape=inputShape)
+	# dim Input:(16000, 1)
+	
+	x = layers.Conv1D(filters=16,
+					kernel_size=64,
+					strides=2,
+					activation='relu',
+					padding='valid',
+					kernel_initializer="he_normal")(inputs)
+	# dim: (7969,16)
+	x = layers.MaxPooling1D(pool_size=8, strides=8)(x)
+	# dim: (996,16)
+	x = layers.Conv1D(filters=32,
+					kernel_size=32,
+					strides=2,
+					activation='relu',
+					padding='valid',
+					kernel_initializer="he_normal")(x)
+	# dim: (483,32)
+	x = layers.MaxPooling1D(pool_size=8, strides=8)(x)
+	# dim: (60,32)
+	x = layers.Conv1D(filters=64,
+					kernel_size=16,
+					strides=2,
+					activation='relu',
+					padding='valid',
+					kernel_initializer="he_normal")(x)
+	# dim: (23,64)
+	x = layers.Conv1D(filters=128,
+					kernel_size=8,
+					strides=2,
+					activation='relu',
+					padding='valid',
+					kernel_initializer="he_normal")(x)
+	# dim: (8,128)
+	
+	x = layers.Flatten()(x)
+	x=layers.Dense(128,
+					activation='relu',
+					kernel_initializer="he_normal")(x)
+	x=layers.Dense(64,
+					activation='relu',
+					kernel_initializer="he_normal")(x)
+	
+	output = layers.Dense(nCategories,
+						activation="softmax",
+						kernel_initializer="glorot_uniform")(x)
+
+	model = keras.Model(inputs=inputs, outputs=output, name=name)
+
+	return model
 
 
 
 
 
-
-#From paper.... GIVES ERRORS
 def AttRNNSpeechModel(nCategories, inputShape, rnn_func=layers.LSTM, name="AttNN"):
     inputs = keras.Input(shape=inputShape)
 	#x = layers.Flatten()(inputs)
