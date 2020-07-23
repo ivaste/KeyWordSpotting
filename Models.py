@@ -72,13 +72,17 @@ def directCNN(nCategories,inputShape, name="directCNN"):
 	inputs = keras.Input(shape=inputShape)
 	# dim Input:(16000, 1)
 	
+	#regu=regularizers.l2(1e-5)
+	
 	x = layers.Conv1D(filters=16,
 					kernel_size=64,
 					strides=2,
 					activation='relu',
 					padding='valid',
 					kernel_initializer="he_normal")(inputs)
+					#kernel_regularizer=regu)(inputs)
 	# dim: (7969,16)
+	x = layers.BatchNormalization()(x)
 	x = layers.MaxPooling1D(pool_size=8, strides=8)(x)
 	# dim: (996,16)
 	x = layers.Conv1D(filters=32,
@@ -87,7 +91,9 @@ def directCNN(nCategories,inputShape, name="directCNN"):
 					activation='relu',
 					padding='valid',
 					kernel_initializer="he_normal")(x)
+					#kernel_regularizer=regu)(x)
 	# dim: (483,32)
+	x = layers.BatchNormalization()(x)
 	x = layers.MaxPooling1D(pool_size=8, strides=8)(x)
 	# dim: (60,32)
 	x = layers.Conv1D(filters=64,
@@ -96,26 +102,37 @@ def directCNN(nCategories,inputShape, name="directCNN"):
 					activation='relu',
 					padding='valid',
 					kernel_initializer="he_normal")(x)
+					#kernel_regularizer=regu)(x)
 	# dim: (23,64)
+	x = layers.BatchNormalization()(x)
 	x = layers.Conv1D(filters=128,
 					kernel_size=8,
 					strides=2,
 					activation='relu',
 					padding='valid',
 					kernel_initializer="he_normal")(x)
+					#kernel_regularizer=regu)(x)
 	# dim: (8,128)
+	x = layers.BatchNormalization()(x)
 	
 	x = layers.Flatten()(x)
-	x=layers.Dense(128,
+	
+	x = layers.Dense(128,
 					activation='relu',
 					kernel_initializer="he_normal")(x)
-	x=layers.Dense(64,
+					#kernel_regularizer=regu)(x)
+	x = layers.Dropout(rate=0.25)(x)
+	
+	x = layers.Dense(64,
 					activation='relu',
 					kernel_initializer="he_normal")(x)
+					#kernel_regularizer=regu)(x)
+	x = layers.Dropout(rate=0.25)(x)
 	
 	output = layers.Dense(nCategories,
 						activation="softmax",
 						kernel_initializer="glorot_uniform")(x)
+					#kernel_regularizer=regu)(x)
 
 	model = keras.Model(inputs=inputs, outputs=output, name=name)
 
@@ -124,7 +141,7 @@ def directCNN(nCategories,inputShape, name="directCNN"):
 
 
 
-
+# FROM PAPER ......
 def AttRNNSpeechModel(nCategories, inputShape, rnn_func=layers.LSTM, name="AttNN"):
     inputs = keras.Input(shape=inputShape)
 	#x = layers.Flatten()(inputs)
