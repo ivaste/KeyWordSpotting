@@ -24,27 +24,72 @@ diCategories = {
             'off': 7,
             'stop': 8,
             'go': 9}
-
+			
 basePath = 'sd_GSCmdV2'
 
-def loadDatasetFilenames():
+def loadDatasetFilenames(nCategories=10):
+	global diCategories
+	if nCategories == 21:
+		diCategories = {
+			'yes': 0,
+            'no': 1,
+            'up': 2,
+            'down': 3,
+            'left': 4,
+            'right': 5,
+            'on': 6,
+            'off': 7,
+            'stop': 8,
+            'go': 9,
+			'zero': 10,
+			'one': 11,
+			'two': 12,
+			'three': 13,
+			'four': 14,
+			'five': 15,
+			'six': 16,
+			'seven': 17,
+			'eight': 18,
+			'nine': 19,
+			'unknown': 20}
+	else:
+		diCategories = {
+            'yes': 0,
+            'no': 1,
+            'up': 2,
+            'down': 3,
+            'left': 4,
+            'right': 5,
+            'on': 6,
+            'off': 7,
+            'stop': 8,
+            'go': 9}
 	
 	categoriesFolder=tuple([e+"/" for e in diCategories])
 	categories=tuple(diCategories)
 
 	testWAVs = pd.read_csv(basePath + '/train/testing_list.txt',
 							   sep=" ", header=None)[0].tolist()
-	testWAVs = [os.path.join(basePath + '/train/', f + '.npy')
-					for f in testWAVs if f.endswith('.wav') and f.startswith(categoriesFolder)]
-
 	valWAVs = pd.read_csv(basePath + '/train/validation_list.txt',
-							   sep=" ", header=None)[0].tolist()
-	valWAVs = [os.path.join(basePath + '/train/', f + '.npy')
-					for f in valWAVs if f.endswith('.wav') and f.startswith(categoriesFolder)]
+								   sep=" ", header=None)[0].tolist()
+								   
+	if nCategories==21:
+		testWAVs = [os.path.join(basePath + '/train/', f + '.npy')
+					for f in testWAVs if f.endswith('.wav')]
+		valWAVs = [os.path.join(basePath + '/train/', f + '.npy')
+						for f in valWAVs if f.endswith('.wav')]
+	else:
+		testWAVs = [os.path.join(basePath + '/train/', f + '.npy')
+					for f in testWAVs if f.endswith('.wav') and f.startswith(categoriesFolder)]
+		valWAVs = [os.path.join(basePath + '/train/', f + '.npy')
+						for f in valWAVs if f.endswith('.wav') and f.startswith(categoriesFolder)]
 
 	allWAVs = []
 	for root, dirs, files in os.walk(basePath + '/train/'):
-		allWAVs += [root + '/' + f for f in files if f.endswith('.wav.npy') and root.endswith(categories)]
+		if nCategories==21:
+			allWAVs += [root + '/' + f for f in files if f.endswith('.wav.npy')]
+		else:
+			allWAVs += [root + '/' + f for f in files if f.endswith('.wav.npy') and root.endswith(categories)]
 	trainWAVs = list(set(allWAVs) - set(valWAVs) - set(testWAVs))
 	
 	#shuffle lists
@@ -60,37 +105,43 @@ def loadDatasetFilenames():
 
 
 # LOAD DATASET FILES
-def loadBatch(filesList,batch_size=1000,dim=16000):
+def loadBatch(filesList,batch_size=1000,dim=16000,nCategories=10):
 
-    X = np.empty((batch_size, dim))
-    y = np.empty((batch_size), dtype=int)
+	X = np.empty((batch_size, dim))
+	y = np.empty((batch_size), dtype=int)
 
     # Generate data
-    for i, ID in enumerate(filesList[0:batch_size]):
-        # load data from file, saved as numpy array on disk
-        curX = np.load(ID)
+	for i, ID in enumerate(filesList[0:batch_size]):
+		# load data from file, saved as numpy array on disk
+		curX = np.load(ID)
 
-        # curX could be bigger or smaller than self.dim
-        if curX.shape[0] == dim:
-            X[i] = curX
-        elif curX.shape[0] > dim:  # bigger
-            # we can choose any position in curX-self.dim
-            randPos = np.random.randint(curX.shape[0]-dim)
-            X[i] = curX[randPos:randPos+dim]
-        else:  # smaller
-            randPos = np.random.randint(dim-curX.shape[0])
-            X[i, randPos:randPos + curX.shape[0]] = curX
-            # print('File dim smaller')
+		# curX could be bigger or smaller than self.dim
+		if curX.shape[0] == dim:
+			X[i] = curX
+		elif curX.shape[0] > dim:  # bigger
+			# we can choose any position in curX-self.dim
+			randPos = np.random.randint(curX.shape[0]-dim)
+			X[i] = curX[randPos:randPos+dim]
+		else:  # smaller
+			randPos = np.random.randint(dim-curX.shape[0])
+			X[i, randPos:randPos + curX.shape[0]] = curX
+			# print('File dim smaller')
+		
+		# Store class
+		if nCategories==21:
+			if os.path.basename(os.path.dirname(ID)) not in diCategories:
+				y[i]=20#Unknown
+			else:
+				y[i] = diCategories[os.path.basename(os.path.dirname(ID))]
+		else:
+			y[i] = diCategories[os.path.basename(os.path.dirname(ID))]
         
-        # Store class
-        y[i] = diCategories[os.path.basename(os.path.dirname(ID))]
-        
-    return X,y
+	return X,y
 
 
-################################################
-################ PREPROCESSING #################
-################################################
+###################################################################
+################ PREPROCESSING ####################################
+###################################################################
 
 #12 MFCC + DELTA + DELTADELTA
 def MFCC_DELTA(X,n_mfcc=12,sr=16000): #X: (n_examples,...) 
