@@ -1,14 +1,14 @@
 
 
 #Hyperparameters
-#categories=['yes','no','up','down','left','right','on','off','stop','go']
-categories=['yes','no','up','down','left','right','on','off','stop','go','zero','one','two','three','for','five','six','seven','eight','nine','unknown']
+categories=['yes','no','up','down','left','right','on','off','stop','go']
+#categories=['yes','no','up','down','left','right','on','off','stop','go','zero','one','two','three','four','five','six','seven','eight','nine','unknown']
 nCategories=len(categories)
 print(nCategories)
 
-nTrainSamples=84000 #30k, 84k
-nValidSamples=9900 #3k, 9900
-nTestSamples=11000 #3k, 11k
+nTrainSamples=30000 #30k, 84k
+nValidSamples=3000 #3k, 9900
+nTestSamples=3000 #3k, 11k
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -25,7 +25,7 @@ train,val,test = LoadAndPreprocessDataset.loadDatasetFilenames(nCategories=nCate
 X,y_train=LoadAndPreprocessDataset.loadBatch(train,batch_size=nTrainSamples, nCategories=nCategories)
 #Preprocess TRAIN
 #X_train=LoadAndPreprocessDataset.MFCC_DELTA(X,n_mfcc=40)
-X_train=LoadAndPreprocessDataset.MFCC(X,n_mfcc=40)
+X_train=LoadAndPreprocessDataset.MFCC(X,n_mfcc=12)
 #X_train=LoadAndPreprocessDataset.melspect(X)
 #X_train=X #No preprocessing
 #Release memory
@@ -35,7 +35,7 @@ del(X)
 X,y_val=LoadAndPreprocessDataset.loadBatch(val,batch_size=nValidSamples, nCategories=nCategories)
 #Preprocess VAL
 #X_val=LoadAndPreprocessDataset.MFCC_DELTA(X,n_mfcc=40)
-X_val=LoadAndPreprocessDataset.MFCC(X,n_mfcc=40)
+X_val=LoadAndPreprocessDataset.MFCC(X,n_mfcc=12)
 #X_val=LoadAndPreprocessDataset.melspect(X)
 #X_val=X #No preprocessing
 #Release memory
@@ -52,8 +52,12 @@ print(X_train.shape,X_val.shape)
 
 print('X_train uses',X_train.shape[0],"of",len(train),"files","and occupies",X_train.nbytes,"bytes")
 print('X_val uses',X_val.shape[0],"of",len(val),"files","and occupies",X_val.nbytes,"bytes")
+
+
+
+
 ###########################################################################
-###########################################################################
+# MODEL
 ###########################################################################
 
 
@@ -81,11 +85,13 @@ model.compile(optimizer='nadam',
 
 model.summary()
 
+
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, LearningRateScheduler, TensorBoard
 import math
 
+log_dir = "logs\\"+save_name #windows
+#log_dir = "logs/"+save_name #cluster
 
-log_dir = "logs/"+save_name
 
 def step_decay(epoch):
     initial_lrate = 0.001
@@ -106,7 +112,7 @@ def performance_scheduling(epoch):
 
 my_callbacks = [
     EarlyStopping(monitor='val_sparse_categorical_accuracy',
-                  patience=20,
+                  patience=7,
                   verbose=1,
                   restore_best_weights=True),
     ModelCheckpoint('models/'+save_name+'.h5',
@@ -122,7 +128,7 @@ results = model.fit(x=X_train,
                     y=y_train,
                     validation_data=(X_val,y_val),
                     batch_size=32, # usually between 10 and 32
-                    epochs=100,
+                    epochs=50,
                     callbacks=my_callbacks,
                     verbose=1)
 
@@ -153,8 +159,12 @@ plt.legend(['train', 'val'], loc='upper left')
 plt.savefig(save_dir+"Loss", dpi=400)
 plt.show()
 
+
+
+
+
 ###########################################################################
-###########################################################################
+# TEST
 ###########################################################################
 
 #Release memory
@@ -167,7 +177,7 @@ del(y_val)
 X,y_test=LoadAndPreprocessDataset.loadBatch(test,batch_size=nTestSamples, nCategories=nCategories)
 #Preprocess TEST
 #X_test=LoadAndPreprocessDataset.MFCC_DELTA(X,n_mfcc=40)
-X_test=LoadAndPreprocessDataset.MFCC(X,n_mfcc=40)
+X_test=LoadAndPreprocessDataset.MFCC(X,n_mfcc=12)
 #X_test=LoadAndPreprocessDataset.melspect(X)
 #X_test=X
 #Release memory
@@ -192,6 +202,8 @@ y_pred=np.argmax(model.predict(X_test),1)
 ###########################################################################
 ###########################################################################
 ###########################################################################
+
+
 
 train_loss=results.history.get('loss')[-1]
 val_loss=results.history.get('val_loss')[-1]
