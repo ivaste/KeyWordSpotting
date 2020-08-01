@@ -1,7 +1,22 @@
 # Key-Word Spotting
+Detect a relatively small set of predefined keywords in a stream of user utterances.
+
+
+<!-- ADD GIF demonstartion -->
 .....
 
 # Work in progress...
+
+[📈 Download Presentation PDF]()
+
+[📄 Download Paper PDF]()
+
+[🕹️ Try Live Demo]()
+
+[📺 Watch Presentation]()
+
+[📺 Watch Live Demo]()
+
 
 ## Table of Contents
 - [Overview](#overview)
@@ -17,8 +32,16 @@
 .......
 
 ### Download best model
-If you just wanto to download and use the best model in your application you need to...
+If you just want to download and use the best model in your application you need to...
 
+'''
+import librosa
+import numpy as np
+import Models #Our models
+import LoadAndPreprocessDataset
+from tensorflow.keras.models import load_model
+.....
+'''
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
