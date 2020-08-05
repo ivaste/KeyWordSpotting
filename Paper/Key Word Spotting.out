@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related work}{}% 2
+\BOOKMARK [1][-]{section.3}{Processing Pipeline}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Variable Audio Length}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Aggregation of Audio Frames}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{4. Signals and Features}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Dataset Partitioning}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Features extraction}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{5. Learning Framework}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{1D CNN on raw data}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Model implementation}{}% 11
+\BOOKMARK [1][-]{section.7}{Evaluation}{}% 12
+\BOOKMARK [1][-]{section.8}{Experimental Setup}{}% 13
+\BOOKMARK [1][-]{section.9}{Results}{}% 14
+\BOOKMARK [1][-]{section.10}{Conclusion}{}% 15
+\BOOKMARK [1][-]{section*.4}{References}{}% 16
