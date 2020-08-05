@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  5 AUG 2020 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  5 AUG 2020 18:19
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -497,56 +497,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
 Package pdftex.def Info: End-To-End.png  used on input line 96.
-(pdftex.def)             Requested size: 255.84102pt x 174.41516pt.
-
-Overfull \hbox (3.84102pt too wide) in paragraph at lines 96--99
- [][] 
- []
-
-[2 <./End-To-End.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 123.
+(pdftex.def)             Requested size: 431.72868pt x 294.3235pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 124.
 
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1584) in paragraph at lines 123--124
+Underfull \hbox (badness 1584) in paragraph at lines 124--125
 \OT1/ptm/m/n/10 fea-tures, in par-tic-u-lar we used the fol-low-ing func-tions:
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 \OT1/pcr/m/n/10 librosa.feature.melspectrogram(...),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 \OT1/pcr/m/n/10 librosa.power_to_db(...),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 \OT1/pcr/m/n/10 librosa.feature.mfcc(...),
  []
 
-<1DCNN.png, id=16, 3152.77875pt x 864.22874pt>
+<1DCNN.png, id=11, 3152.77875pt x 864.22874pt>
 File: 1DCNN.png Graphic file (type png)
 <use 1DCNN.png>
-Package pdftex.def Info: 1DCNN.png  used on input line 138.
+Package pdftex.def Info: 1DCNN.png  used on input line 131.
 (pdftex.def)             Requested size: 504.45491pt x 138.27942pt.
-
-Overfull \hbox (252.45491pt too wide) in paragraph at lines 138--141
-[][]
- []
-
+[2]
 <confronto.jpg, id=17, 426.09187pt x 636.12656pt>
 File: confronto.jpg Graphic file (type jpg)
 <use confronto.jpg>
-Package pdftex.def Info: confronto.jpg  used on input line 155.
-(pdftex.def)             Requested size: 213.04541pt x 318.0625pt.
-[3 <./1DCNN.png> <./confronto.jpg>]
-Underfull \hbox (badness 2512) in paragraph at lines 213--214
+Package pdftex.def Info: confronto.jpg  used on input line 151.
+(pdftex.def)             Requested size: 255.65709pt x 381.67888pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./End-To-End.png> <./1DCNN.png>] [4 <./confronto.jpg>]
+Underfull \hbox (badness 2512) in paragraph at lines 222--223
 []\OT1/ptm/m/n/8 Jan Chorowski, Dzmitry Bah-danau, Dmitriy Serdyuk, Kyunghyun
  []
 
@@ -561,13 +554,13 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] ("Key Word Spotting.aux") ) 
+[5] ("Key Word Spotting.aux") ) 
 Here is how much of TeX's memory you used:
- 4865 strings out of 492970
- 78726 string characters out of 3126594
- 152338 words of memory out of 3000000
+ 4866 strings out of 492970
+ 78733 string characters out of 3126594
+ 153338 words of memory out of 3000000
  8656 multiletter control sequences out of 15000+200000
- 38878 words of font info for 78 fonts, out of 3000000 for 9000
+ 40014 words of font info for 79 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,7n,38p,1193b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.
@@ -582,9 +575,9 @@ mb8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/time
 s/utmbi8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
 /times/utmr8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (4 pages, 610191 bytes).
+Output written on "Key Word Spotting.pdf" (5 pages, 611030 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
+ 61 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

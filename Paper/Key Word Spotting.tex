@@ -91,12 +91,13 @@ Only a batch of subsequent windows will be processed. For each of these windows 
 \subsection{Aggregation of Audio Frames}
 During the classification we need to aggregate the predictions to come up to a decision, as illustrated in Figure 1; for this reason, different fusion rules can be used to reach a final decision, such as the \textit{majority vote} or the \textit{sum rule}.
 
-\begin{figure}
+\begin{figure*}
 \centering
-\includegraphics[scale=0.16]{End-To-End}
-\begin{small}\textit{\textbf{Figure 1}}
+\includegraphics[scale=0.27]{End-To-End}
+
+\begin{small}\textit{\textbf{Figure 1}: MANCA DESCRIZIONE}
 \end{small}
-\end{figure}
+\end{figure*}
 
 \section{4.	Signals and Features}
 As stated in Section I, we used the Google Speech Dataset V2. This dataset contains 105,829 audio files in .wav format (duration =  one second) divided in 30 classes, plus an additional class containing 5 different type of noise of variable duration (about 10 seconds for each file).
@@ -124,6 +125,15 @@ We used the \textit{Librosa Python Library} to compute those features, in partic
 
 \section{5.	Learning Framework}
 \subsection{1D CNN on raw data}
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.16]{1DCNN}
+
+\begin{small}\textit{\textbf{Figure 2}: MANCA DESCRIZIONE}
+\end{small}
+\end{figure*}
+
 The proposed architecture (shown in \textbf{\textit{Figure 2}}) is made of four \textit{convolutional layers} interlaced with max pooling layers and followed by two \textit{fully connected layers} and an output layer.
 
 The input consists of an array of 16000 dimensions, which represents a 1-second audio sample at 16kHz.
@@ -133,14 +143,17 @@ Keeping in mind the architecture shown in \textbf{\textit{Figure 2}}, it is poss
 
 In the case of multiclass classification, the number of neurons of the output layer is the number of classes. Using the \textit{softmax} as activation function for the output layer, each output neuron indicates the membership degree of the input samples for each class.
 
-\begin{figure}
-%\centering
-\includegraphics[scale=0.16]{1DCNN}
-\begin{small}\textit{\textbf{Figure 2}}
-\end{small}
-\end{figure}
 
+%\newpage
 \subsection{DSConv Model}
+\begin{figure*}[t]
+\centering
+\includegraphics[scale=0.6]{confronto}
+
+\begin{small}\textit{\textbf{Figure 3}: MANCA DESCRIZIONE}
+\end{small}
+\end{figure*}
+
 This model uses \textit{Depthwise Separable Convolutions}. A separable convolution uses less parameters, less memory and less computations than regular convolutional layers, and in general it even perform better.
 
 There are two types of Separable convolution: Spatial and Depthwise.
@@ -150,17 +163,13 @@ Depthwise Separable Convolutions use kernels that cannot be “split” into two
 
 In \textbf{\textit{Figure 3}} you can see the difference between a normal 3D Convolution and a Depthwise, and the final Depthwise Separable Convolutions block we used. 
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{confronto}
-\begin{small}\textit{\textbf{Figure 3}}
-\end{small}
-\end{figure}
+
 
 In our work we adopted a depthwise separable CNN inspired by the implementation of Hello Edge: Keyword Spotting on Microcontrollers.
 This CNN is composed of a 2D CNN followed by batch normalization and 4 or 5 DSConv2D layers. An average pooling, with padding 2x2 and stride 2x2, followed by a fully-connected layer is used at the end to provide global interaction and reduce the total number of parameters in the final layer.
 We implemented three different variants: large, medium and small, described in Table X, where we tried to reduce the number of parameters while maintaining a good accuracy.
 
+\newpage
 \subsection{Ensemble}
 The ensemble simply took the two best models and did the average of their final prediction: in this way we reached the best accuracy, but at the cost of having a large network.
 
