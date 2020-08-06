@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  5 AUG 2020 18:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  6 AUG 2020 12:16
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -360,9 +360,39 @@ See the caption package documentation for explanation.
 \c@caption@flags=\count138
 \c@continuedfloat=\count139
 Package caption Info: subfigure package is loaded.
-) ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+)
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multirow.
+sty"
+Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+\multirow@colwidth=\skip55
+\multirow@cntb=\count140
+\multirow@dima=\skip56
+\bigstrutjot=\dimen155
+)
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktabs.
+sty"
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen156
+\lightrulewidth=\dimen157
+\cmidrulewidth=\dimen158
+\belowrulesep=\dimen159
+\belowbottomsep=\dimen160
+\aboverulesep=\dimen161
+\abovetopsep=\dimen162
+\cmidrulesep=\dimen163
+\cmidrulekern=\dimen164
+\defaultaddspace=\dimen165
+\@cmidla=\count141
+\@cmidlb=\count142
+\@aboverulesep=\dimen166
+\@belowrulesep=\dimen167
+\@thisruleclass=\count143
+\@lastruleclass=\count144
+\@thisrulewidth=\dimen168
+)
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count140
+\c@float@type=\count145
 \float@exts=\toks21
 \float@box=\box56
 \@float@everytoks=\toks22
@@ -370,43 +400,43 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.st
 y"
-\wrapoverhang=\dimen155
-\WF@size=\dimen156
-\c@WF@wrappedlines=\count141
+\wrapoverhang=\dimen169
+\WF@size=\dimen170
+\c@WF@wrappedlines=\count146
 \WF@box=\box58
 \WF@everypar=\toks23
 Package: wrapfig 2003/01/31  v 3.6
 ) ("Key Word Spotting.aux")
 \openout1 = `"Key Word Spotting.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 -- Lines per column: 56 (exact).
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
-\scratchdimen=\dimen157
+\scratchcounter=\count147
+\scratchdimen=\dimen171
 \scratchbox=\box59
-\nofMPsegments=\count143
-\nofMParguments=\count144
+\nofMPsegments=\count148
+\nofMParguments=\count149
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count145
-\MPscratchDim=\dimen158
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
+\MPscratchCnt=\count150
+\MPscratchDim=\dimen172
+\MPnumerator=\count151
+\makeMPintoPDFobject=\count152
 \everyMPtoPDFconversion=\toks25
 )
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
@@ -476,17 +506,17 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 56.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 62.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{C:/Users/lagge/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
@@ -496,53 +526,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <End-To-End.png, id=9, 1598.97375pt x 1090.0725pt>
 File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
-Package pdftex.def Info: End-To-End.png  used on input line 96.
+Package pdftex.def Info: End-To-End.png  used on input line 104.
 (pdftex.def)             Requested size: 431.72868pt x 294.3235pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 124.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 135.
 
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Underfull \hbox (badness 1584) in paragraph at lines 124--125
-\OT1/ptm/m/n/10 fea-tures, in par-tic-u-lar we used the fol-low-ing func-tions:
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-\OT1/pcr/m/n/10 librosa.feature.melspectrogram(...),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-\OT1/pcr/m/n/10 librosa.power_to_db(...),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-\OT1/pcr/m/n/10 librosa.feature.mfcc(...),
- []
-
-<1DCNN.png, id=11, 3152.77875pt x 864.22874pt>
+) [2]
+<1DCNN.png, id=16, 3152.77875pt x 864.22874pt>
 File: 1DCNN.png Graphic file (type png)
 <use 1DCNN.png>
-Package pdftex.def Info: 1DCNN.png  used on input line 131.
+Package pdftex.def Info: 1DCNN.png  used on input line 146.
 (pdftex.def)             Requested size: 504.45491pt x 138.27942pt.
-[2]
-<confronto.jpg, id=17, 426.09187pt x 636.12656pt>
-File: confronto.jpg Graphic file (type jpg)
-<use confronto.jpg>
-Package pdftex.def Info: confronto.jpg  used on input line 151.
-(pdftex.def)             Requested size: 255.65709pt x 381.67888pt.
+<confronto2.jpg, id=17, 1094.58937pt x 544.28343pt>
+File: confronto2.jpg Graphic file (type jpg)
+<use confronto2.jpg>
+Package pdftex.def Info: confronto2.jpg  used on input line 165.
+(pdftex.def)             Requested size: 503.51723pt x 250.37341pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./End-To-End.png> <./1DCNN.png>] [4 <./confronto.jpg>]
-Underfull \hbox (badness 2512) in paragraph at lines 222--223
-[]\OT1/ptm/m/n/8 Jan Chorowski, Dzmitry Bah-danau, Dmitriy Serdyuk, Kyunghyun
- []
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 171.
 
+[3 <./End-To-End.png>] [4 <./1DCNN.png> <./confronto2.jpg>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 250.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 265.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 286.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 307.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 328.
+
+[5] [6]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -554,30 +582,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] ("Key Word Spotting.aux") ) 
+[7
+
+] ("Key Word Spotting.aux") ) 
 Here is how much of TeX's memory you used:
- 4866 strings out of 492970
- 78733 string characters out of 3126594
- 153338 words of memory out of 3000000
- 8656 multiletter control sequences out of 15000+200000
- 40014 words of font info for 79 fonts, out of 3000000 for 9000
+ 5002 strings out of 492970
+ 80712 string characters out of 3126594
+ 168621 words of memory out of 3000000
+ 8772 multiletter control sequences out of 15000+200000
+ 47096 words of font info for 97 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,7n,38p,1193b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.
-9/fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lagge/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lagge/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lag
-ge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a
-.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
-mb8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/time
-s/utmbi8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
-/times/utmr8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (5 pages, 611030 bytes).
+ 41i,14n,39p,868b,375s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/
+fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lagge/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lagge/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lagge/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/couri
+er/ucrr8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
+/times/utmb8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/urw/times/utmbi8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/urw/times/utmr8a.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on "Key Word Spotting.pdf" (7 pages, 666395 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
