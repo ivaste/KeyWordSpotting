@@ -44,7 +44,7 @@ In this paper, we present an end-to-end approach for the keyword spotting task, 
 We explore the application of a 1D Convolutional Neural Network (CNN) that directly learns a representation from the audio signal, a Depthwise Convolution (DSConv) and an ensemble of the best models.
 The proposed models achieve a maximum accuracy of 96.6\% with a small footprint of 127K parameters on the Google Speech Commands Dataset V2 (for the 10-commands and 21-commands recognition task).
 
-We also compare the performances of our networks on different feature extraction methods such as 80 Mel, 40 MFCCs and 40MFCCs + deltas.
+We also compare the performances of our networks on different feature extraction methods such as 80 Mel, 40 MFCCs and 40MFCCs + $\Delta$s.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
@@ -225,7 +225,7 @@ We implemented three different variants: \textit{Large}, \textit{Medium} and \te
 \end{center}
 
 \subsection{Ensemble}
-The ensemble simply took the two best models and computed the average of their final prediction, in this way we reached the best accuracy paying a high price: a large network.
+We built three kinds of ensembles: \textit{large}, \textit{medium} and \textit{small}, in order to have models that can fit different hardware sizes.  The ensembles simply pick the two best models and compute the average of their final prediction, in this way we reached the best accuracy paying a high price: larger networks.
 
 All models are trained with the \textbf{Google Tensorflow 2.1} Framework with \textbf{Keras} using the standard \textit{Sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32, the models were trained for 100 epochs with initial learning rate of $10^{-4}$. An early stopping with a patience of 10 epochs was applied to avoid overfitting.
 
@@ -254,8 +254,8 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
 \begin{tabular}{@{}cll@{}}
 \cmidrule(l){2-3}
 \multicolumn{1}{l}{} &
-  \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10 commands\\ (30K-3K-3K)\end{tabular}}} &
-  \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21 commands\\ (84K-9K-11K)\end{tabular}}} \\ \midrule
+  \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
+  \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \midrule
 \textbf{Accuracy \%}   & 93.0   & 89.1   \\ \midrule
 \textbf{\# parameters} & 257,018 & 257,733 \\ \midrule
 \textbf{Speed (ms)}    & 28.71  & 28.25  \\ \bottomrule
@@ -271,18 +271,18 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
 \begin{tabular}{@{}cllllll@{}}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10 commands\\ (30K-3K-3K)\end{tabular}}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21 commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
-\multicolumn{1}{l}{}   & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + deltas MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + deltas MFCC} \\ \midrule
-\textbf{Accuracy \%}   & 96.0               & 95.3             & 93.9                     & 93.4             & boh              & boh                      \\ \midrule
-\textbf{\# parameters} & 874,930           & 571,330           & 1,178,530                  & 1,375,881          & boh              & boh                      \\ \midrule
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
+\multicolumn{1}{l}{}   & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} \\ \midrule
+\textbf{Accuracy \%}   & \textbf{96.0}               & 95.3             & 93.9                     & 93.4             & \textbf{93.7}              & 92.7                      \\ \midrule
+\textbf{\# parameters} & 874,930           & \textbf{571,330}           & 1,178,530                  & 1,375,881          & \textbf{738,321}              & 2,013,441                      \\ \midrule
 \textbf{\begin{tabular}[c]{@{}c@{}}Speed (ms)\\ Speed with FE\end{tabular}} &
-  \begin{tabular}[c]{@{}l@{}}33.39\\ 41.44\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{33.39}\\ \textbf{41.44}\end{tabular} &
   \begin{tabular}[c]{@{}l@{}}30.24\\ 45.32\end{tabular} &
-  boh &
+  \begin{tabular}[c]{@{}l@{}}33.42\\ 44.25\end{tabular} &
   \begin{tabular}[c]{@{}l@{}}33.79\\ 41.62\end{tabular} &
-  boh &
-  boh \\ \bottomrule
+  \begin{tabular}[c]{@{}l@{}}\textbf{30.87}\\ \textbf{39.66}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}33.13\\ 44.62\end{tabular} \\ \bottomrule
 \end{tabular}}
 \caption{DSConv Large performances on 10 and 21-commands datasets.}
 \end{table*}
@@ -292,18 +292,18 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
 \begin{tabular}{@{}cllllll@{}}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10 commands\\ (30K-3K-3K)\end{tabular}}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21 commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
-\multicolumn{1}{l}{}   & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} \\ \midrule
-\textbf{Accuracy \%}   & 94.3             & 95.0               & 94.8                     & 92.7             & 92.2             & boh                      \\ \midrule
-\textbf{\# parameters} & 469,398           & 262,998           & 675,798                   & 832,673           & 399,233           & boh                      \\ \midrule
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
+\multicolumn{1}{l}{}   & \textit{80 Mels} & \textbf{\textit{40 MFCC}} & \textit{40 + $\Delta$ MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} \\ \midrule
+\textbf{Accuracy \%}   & 94.3             & \textbf{95.0}               & 94.8                     & \textbf{92.7}             & 92.2             & 91.7                      \\ \midrule
+\textbf{\# parameters} & 469,398           & \textbf{262,998}           & 675,798                   & 832,673           & \textbf{399,233}           & 1,266,113                      \\ \midrule
 \textbf{\begin{tabular}[c]{@{}c@{}}Speed (ms)\\ Speed with FE\end{tabular}} &
   \begin{tabular}[c]{@{}l@{}}30.75\\ 38.49\end{tabular} &
-  \begin{tabular}[c]{@{}l@{}}29.55\\ 38.23\end{tabular} &
-  boh &
-  \begin{tabular}[c]{@{}l@{}}32.25\\ 39.72\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{29.55}\\ \textbf{38.23}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}30.76\\ 41.82\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{32.25}\\ \textbf{39.72}\end{tabular} &
   \begin{tabular}[c]{@{}l@{}}30.01\\ 46.76\end{tabular} &
-  boh \\ \bottomrule
+  \begin{tabular}[c]{@{}l@{}}33.03\\ 47.08\end{tabular} \\ \bottomrule
 \end{tabular}}
 \caption{DSConv Medium performances on 10 and 21-commands datasets.}
 \end{table*}
@@ -313,39 +313,39 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
 \begin{tabular}{@{}cllllll@{}}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10 commands\\ (30K-3K-3K)\end{tabular}}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21 commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
-\multicolumn{1}{l}{}   & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} \\ \midrule
-\textbf{Accuracy \%}   & 92.5             & 92.9             & boh                      & 90.0               & 89.2             & boh                      \\ \midrule
-\textbf{\# parameters} & 300,618           & 127,818           & boh                      & 604,757           & 241,877           & boh                      \\ \midrule
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
+\multicolumn{1}{l}{}   & \textit{80 Mels} & \textbf{\textit{40 MFCC}} & \textit{40 + $\Delta$ MFCC} & \textit{80 Mels} & \textit{40 MFCC} & \textit{40 + $\Delta$ MFCC} \\ \midrule
+\textbf{Accuracy \%}   & 92.5             & \textbf{92.9}             & 92.5                      & \textbf{90.0}               & 89.2             & 86.5                      \\ \midrule
+\textbf{\# parameters} & 300,618           & \textbf{127,818}           & 473,418                      & 604,757           & \textbf{241,877}           & 967,637                      \\ \midrule
 \textbf{\begin{tabular}[c]{@{}c@{}}Speed (ms)\\ Speed with FE\end{tabular}} &
   \begin{tabular}[c]{@{}l@{}}31.00\\ 38.31\end{tabular} &
-  \begin{tabular}[c]{@{}l@{}}29.27\\ 38.23\end{tabular} &
-  boh &
-  \begin{tabular}[c]{@{}l@{}}32.86\\ 37.97\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{29.27}\\ \textbf{38.23}\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}30.54\\ 40.23\end{tabular} &
+  \begin{tabular}[c]{@{}l@{}}\textbf{32.86}\\ \textbf{37.97}\end{tabular} &
   \begin{tabular}[c]{@{}l@{}}29.48\\ 48.15\end{tabular} &
-  boh \\ \bottomrule
+  \begin{tabular}[c]{@{}l@{}}30.31\\ 40.99\end{tabular} \\ \bottomrule
 \end{tabular}}
 \caption{DSConv Small performances on 10 and 21-commands datasets.}
 \end{table*}
 
 \begin{table*}[]
-\scalebox{1.38}{
+\scalebox{0.91}{
 \begin{tabular}{@{}cllllll@{}}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10 commands\\ (30K-3K-3K)\end{tabular}}} &
-  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21 commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
+  \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
 \multicolumn{1}{l}{} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv Large 80 Mels\\ +\\ DSConv Large 40 MFCC\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{boh}} &
-  \multicolumn{1}{c}{\textit{boh}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv Large 80 Mels\\ +\\ DSConv Large 40 MFCC\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{boh}} &
-  \multicolumn{1}{c}{\textit{boh}} \\ \midrule
-\textbf{Accuracy \%}   & 96.6    & 92.9   & boh & 90.0     & 89.2   & boh \\ \midrule
-\textbf{\# parameters} & 1,446,260 & 127,818 & boh & 604,757 & 241,877 & boh \\ \midrule
-\textbf{Speed (ms}     & 89.28   & boh    & boh & boh    & boh    & boh \\ \bottomrule
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv M 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv M 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv S 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} \\ \midrule
+\textbf{Accuracy \%}   & 96.8    & 96.4   & 95.6 & 95.2     & 95.0   & 94.2 \\ \midrule
+\textbf{\# parameters} & 2,624,790 & 1,303,726 & 691,463 & 2,498,019 & 1,970,227 & 1,379,431 \\ \midrule
+\textbf{Speed (ms}     & 131.01   & 122.04    & 106.09 & 125.9    & 114.21    & 109.03 \\ \bottomrule
 \end{tabular}}
 \caption{Ensemble performances on 10 and 21-commands datasets.}
 \end{table*}
@@ -365,10 +365,46 @@ Further improvement could be exploring the SincConv, attention mechanism and LST
 
 You can find the code on github [X]
 
+\begin{table*}[]
+\scalebox{1.79}{
+\begin{tabular}{llll}
+\cline{2-4}
+                           & \textbf{Assemble \%} & \textbf{\# Parameters} & \textbf{Speed (ms)} \\ \hline
+SincConv                   & 97.4                 & 162,000                & 40.35               \\ \hline
+Our Ensemble Large         & \textbf{96.8}        & 2,624,790              & 131.01              \\ \hline
+Our Ensemble Medium        & 96.4                 & 1,303,726              & 122.04              \\ \hline
+Our DSConvLarge + 80Mels  & 96.0                 & 874,930                & 41.44               \\ \hline
+Our Ensemble Small         & 95.6                 & 691,463                & 106.09              \\ \hline
+Our DSConvMedium + 40MFCC & 95.0                 & 262,998                & 38.23               \\ \hline
+1DCNN on raw data         & 93.0                 & 257,018                & \textbf{28.71}      \\ \hline
+Our DSConvSmall + 40MFCC   & 92.9                 & \textbf{127,818}       & 38.23               \\ \hline
+\end{tabular}}
+\caption{10-commands}
+\end{table*}
+
+\begin{table*}[]
+\scalebox{1.79}{
+\begin{tabular}{llll}
+\cline{2-4}
+                          & Accuracy \%   & \# parameters    & Speed (ms)     \\ \hline
+SincConv                  & 97.4          & 162,000          & 40.35          \\ \hline
+Our Ensemble Large        & \textbf{95.2} & 2,498,019        & 125.9          \\ \hline
+Our Ensemble Medium       & 95.0          & 1,970,227        & 114.21         \\ \hline
+Our Ensemble Small        & 94.2          & 1,379,431        & 109.03         \\ \hline
+Our Ensemble + 40MFCC     & 93.7          & 738,321          & 39.66          \\ \hline
+Our DSConvMedium + 80Mels & 92.7          & 832,673          & 39.72          \\ \hline
+Our DSConvSmall + 80Mels  & 90.0          & 604,757          & 37.97          \\ \hline
+1DCNN on raw data         & 89.1          & \textbf{257,733} & \textbf{28.25} \\ \hline
+\end{tabular}}\\
+\caption{21-commands}
+\end{table*}
+
+\section*{Work Setup}
+Bla bla
 \section*{What we learnt as students}
 We cannot say we faced an easy problem. With this project we learnt the meaning of the word "teamwork". It took a long time, for us, to read, understand, analyze and synthesize all the articles we read; we never did something like this before. We co-operated writing the code (run on an ASUS ROG GL703GM \textit{Scar Edition}, with processor Intel Core i7-8750H Hexa-Core, Nvidia  GeForce GTX 1060 and 16GB RAM memory), and in the meanwhile we started to think to what to write to present a well-written paper.
 
-We learnt how to respect deadlines given the one to the other, \textbf{we learnt the one from the other}.
+We learnt how to respect deadlines given the one to the other.
 
 \begin{thebibliography}{1}
 \bibitem{1}
