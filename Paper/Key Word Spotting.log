@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  9 AUG 2020 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  10 AUG 2020 12:23
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -545,7 +545,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-<End-To-End.png, id=10, 1598.97375pt x 1090.0725pt>
+<End-To-End.png, id=11, 1598.97375pt x 1090.0725pt>
 File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
 Package pdftex.def Info: End-To-End.png  used on input line 108.
@@ -556,81 +556,95 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 139.
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<1DCNN.png, id=12, 3152.77875pt x 864.22874pt>
+<1DCNN.png, id=13, 3152.77875pt x 864.22874pt>
 File: 1DCNN.png Graphic file (type png)
 <use 1DCNN.png>
 Package pdftex.def Info: 1DCNN.png  used on input line 150.
 (pdftex.def)             Requested size: 504.45491pt x 138.27942pt.
 [2]
-<confronto3.jpg, id=18, 879.285pt x 465.99094pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./End-To-End.png> <./1DCNN.png>]
+<confronto3.jpg, id=24, 879.285pt x 465.99094pt>
 File: confronto3.jpg Graphic file (type jpg)
 <use confronto3.jpg>
-Package pdftex.def Info: confronto3.jpg  used on input line 176.
+Package pdftex.def Info: confronto3.jpg  used on input line 175.
 (pdftex.def)             Requested size: 492.39626pt x 260.95314pt.
- [3 <./End-To-End.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 185.
-
-[4 <./1DCNN.png> <./confronto3.jpg>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 252.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 269.
+               Default added (so using `tbp') on input line 184.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 290.
+               Default added (so using `tbp') on input line 250.
 
 
-Overfull \hbox (0.89389pt too wide) in paragraph at lines 307--308
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 267.
+
+
+Overfull \hbox (0.69923pt too wide) in paragraph at lines 284--285
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 311.
+               Default added (so using `tbp') on input line 288.
 
 
-Overfull \hbox (0.89389pt too wide) in paragraph at lines 328--329
+Overfull \hbox (0.89389pt too wide) in paragraph at lines 305--306
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 332.
+               Default added (so using `tbp') on input line 309.
 
 
-Overfull \hbox (0.50885pt too wide) in paragraph at lines 349--350
+Overfull \hbox (0.89389pt too wide) in paragraph at lines 326--327
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 368.
+               Default added (so using `tbp') on input line 330.
 
 
-Overfull \hbox (1.63452pt too wide) in paragraph at lines 381--382
+Overfull \hbox (0.50885pt too wide) in paragraph at lines 347--348
+[][] 
+ []
+
+[4]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 366.
+
+
+Overfull \hbox (6.64659pt too wide) in paragraph at lines 379--380
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 385.
+               Default added (so using `tbp') on input line 383.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
-
+Overfull \hbox (6.54353pt too wide) in paragraph at lines 396--397
+[][] 
  []
 
 
-Underfull \vbox (badness 1990) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
- [5]
-[6]
+ []
+
+[5 <./confronto3.jpg>] [6]
+Underfull \hbox (badness 1584) in paragraph at lines 405--406
+[]\OT1/ptm/b/n/10 Scientific ar-ti-cles anal-y-sis\OT1/ptm/m/n/10 : Ste-fano Iv
+an-cich, Luca
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -644,11 +658,11 @@ Before submitting the final camera ready copy, remember to:
 
 [7] ("Key Word Spotting.aux") ) 
 Here is how much of TeX's memory you used:
- 5088 strings out of 492970
- 82478 string characters out of 3126594
- 177455 words of memory out of 3000000
- 8845 multiletter control sequences out of 15000+200000
- 49843 words of font info for 105 fonts, out of 3000000 for 9000
+ 5090 strings out of 492970
+ 82487 string characters out of 3126594
+ 178458 words of memory out of 3000000
+ 8846 multiletter control sequences out of 15000+200000
+ 50950 words of font info for 106 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
  41i,15n,39p,868b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.
@@ -666,7 +680,7 @@ iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/lagge/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/lagge/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/lagge/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (7 pages, 665445 bytes).
+Output written on "Key Word Spotting.pdf" (7 pages, 667873 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

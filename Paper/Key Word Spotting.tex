@@ -39,41 +39,41 @@ Email: luca.masiero.8@studenti.unipd.it}}
 \maketitle
 
 \begin{abstract}
-In this paper, we present an end-to-end approach for the keyword spotting task, consisting of a sliding window of one second, a Voice Activity Detection module, a feature extraction module, a neural network and a fusion rule.
+In this paper, we present an end-to-end approach for the Keyword Spotting task, consisting of a sliding window of one second, a Voice Activity Detection module, a feature extraction module, a neural network and a fusion rule.
 
-We explore the application of a 1D Convolutional Neural Network (CNN) that directly learns a representation from the audio signal, a Depthwise Convolution (DSConv) and an ensemble of the best models.
-The proposed models achieve a maximum accuracy of 96.6\% with a small footprint of 127K parameters on the Google Speech Commands Dataset V2 (for the 10-commands and 21-commands recognition task).
+We explore the application of a 1D Convolutional Neural Network (CNN), that directly learns a representation from the audio signal, a Depthwise Convolution (DSConv) and an ensemble of the best models.
+The proposed models achieve a maximum accuracy of 96.6\% with a small footprint of 127K parameters on the Google Speech Commands Dataset V2 (for the 10-commands and 21-commands recognition tasks).
 
 We also compare the performances of our networks on different feature extraction methods such as 80 Mel, 40 MFCCs and 40MFCCs + $\Delta$s.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
 \begin{IEEEkeywords}
-Human voice, Command recognition, Deep learning, Keyword spotting.
+Human voice, Command Recognition, Deep Learning, Keyword Spotting.
 \end{IEEEkeywords}
 
 \section{Introduction}
-The goal of keyword spotting is to detect a relatively small set of predefined keywords in a stream of user utterances, usually in the context of an intelligent agent on a mobile phone or a consumer “smart home” device.
+The goal of Keyword Spotting is to detect a relatively small set of predefined keywords in a stream of user utterances, usually in the context of an intelligent agent on a mobile phone or a consumer “smart home” device.
 
-Since the cloud-based interpretation of speech input requires transferring audio recordings from the user’s device, significant privacy implications should be kept in mind. Therefore, on-device keyword spotting has two main objectives: the first one concerns the recognition of common commands such as “on” and “off” (as well as other frequent words such as “yes” and “no”): this recognition can be accomplished directly on the user’s device; secondly, keyword spotting can be used to detect “command triggers”, such as “hey Siri”, that provides explicit hints for interactions directed at the device itself. It is additionally desirable that such models have a small footprint (for example, measured in the number of model parameters) so they can be deployed on low-power and performance-limited devices.
+Since the cloud-based interpretation of speech input requires transferring audio recordings from the user’s device, significant privacy implications should be kept in mind. Therefore, on-device keyword spotting has two main objectives: the first one concerns the recognition of common commands such as “on” and “off” (as well as other frequent words such as “yes” and “no”): this recognition can be accomplished directly on the user’s device; secondly, keyword spotting can be used to detect “command triggers”, such as “hey Siri”, that provides explicit hints for interactions directed at the device itself. It is additionally desirable that such models have a small footprint (for example, measured by the number of model parameters) so they can be deployed on low-power and performance-limited devices.
 
-In the last years, neural networks have been shown to provide effective solutions to the small-footprint keyword spotting problem. Research typically focuses on a trade-off between achieving a high detection accuracy, with, on the other hand, a small footprint. Compact models are usually variants derived from a full model that sacrifices accuracy for a smaller model footprint.
+In the last years, neural networks have been shown to provide effective solutions to the small-footprint Keyword Spotting Problem. Research typically focuses on a trade-off between achieving a high detection accuracy, with, on the other hand, a small footprint. Compact models are usually variants derived from a full model that sacrifices accuracy for a smaller model footprint.
 
-In this work, we focus on \textbf{convolutional neural networks} (CNNs), a class of models that has been successfully applied to small-footprint keyword spotting; in particular, we explore the use of \textbf{Depthwise Separable Convolutions} (\textbf{DSConv}) and \textbf{1DCNN}.
+In this work, we focus on \textbf{convolutional neural networks} (\textbf{CNNs}): a class of models that has been successfully applied to small-footprint keyword spotting; in particular, we explore the use of \textbf{Depthwise Separable Convolutions} (\textbf{DSConv}) and \textbf{1DCNN}.
 
 In this paper we will: 
 \begin{itemize}
 \setlength{\itemsep}{0pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
-\item present an end-to-end architecture for the keyword spotting task;
-\item try different audio features (raw data, 80 Mels, 40 MFCC and 40 MFCC with Deltas and Delta-Deltas);
-\item train different type of neural networks (1D CNN on raw data and DSConv CNN on features);
+\item present an end-to-end architecture for the Keyword Spotting task;
+\item try different audio features (raw data, 80 Mels, 40 MFCC and 40 MFCC with first and second derivatives (represented by the symbol $\Delta$);
+\item train different type of neural networks (1DCNN on raw data and DSConv CNN on features);
 \item build an ensemble of the best models;
-\item compare prediction speed and the number of parameters between the models.
+\item compare prediction speed and number of parameters between the models.
 \end{itemize}
 
-The report is structured as follows. In Section II we present the current state of the art in the speech recognition field, in Section III we show our approach in order to tackle the problem and in Section IV we explain the pre-processing techniques used. In Section V we describe the various architectures we used, in Section VI we report their results and in Section VII we make some extra considerations on future developments and improvements.
+The report is structured as follows. In Section II we present the current state of the art in the Speech Recognition field, in Section III we show our approach in order to tackle the problem and in Section IV we explain the pre-processing techniques we used. In Section V we describe the various architectures we considered, in Section VI we report their results and in Section VII we make some extra considerations on future developments and improvements.
 
 %\hfill September 22, 2020
 %\subsection{Subsection Heading Here}
@@ -82,13 +82,13 @@ The report is structured as follows. In Section II we present the current state 
 %Subsubsection text here.
 
 \section{Related work}
-The first system similar to a modern ASR was built in the mid-1950s by researchers at the Bell laboratories and was able to recognize numerical digits from speech using formants of the input audio. These formants are a concentration of the acoustic energy around a particular frequency in the input file wave. 
+The first system similar to a modern ASR was built in the mid-1950s by researchers at the Bell Laboratories and was able to recognize numerical digits from speech using formants of the input audio. These formants are a concentration of the acoustic energy around a particular frequency in the input file wave. 
 
-For the next thirty years, various researchers developed devices capable of recognize vowels and consonants using different types of features (like phonemes), until the introduction, in the mid 1980s, of the Hidden Markov Models (HMMs). This approach, described in [1], represented a significant shift from simple pattern recognition methods (based on templates and a spectral distance measure) to a statistical method for speech processing and was possible thank to the incredible advancements in the computer computational power during those years.
+For the next thirty years, various researchers developed devices capable of recognizing vowels and consonants using different types of features (like phonemes), until the introduction, in the mid 1980s, of the Hidden Markov Models (HMMs). This approach, described in [1], represented a significant shift from simple pattern recognition methods (based on templates and a spectral distance measure) to a statistical method for speech processing and was possible thank to the incredible advancements in the computer computational power during those years.
 
-In recent times, however, the HMMs were challenged by the introduction of Deep Learning and several architectures that work very well with these type of problems: Convolutional Neural Networks take advantage of weight-sharing and the convolution operation (which is shift-invariant in the data representation domain) while Recurrent Neural Networks (RNN) are able to store a huge quantity of information.
+In recent times, however, the HMMs were challenged by the introduction of Deep Learning and several architectures that work very well with these type of problems: Convolutional Neural Networks take advantage of weight-sharing and the convolution operation (which is shift-invariant in the data representation domain), while Recurrent Neural Networks (RNN) are able to store a huge quantity of information.
 
-Our two neural networks are inspired by [2] and [3]. In [2] the authors apply 1D CNN on raw signals for environment sound classification; we slightly modified the structure to adapt it to our task. In [3] the authors made some improvement on the MobileNet for Mobile Vision Applications using DSConv. 
+Our two neural networks are inspired by [2] and [3]. In [2] the authors apply 1DCNN on raw signals for environment sound classification; we slightly modified the structure to adapt it to our task. In [3] the authors made some improvement on the MobileNet for Mobile Vision Applications using DSConv. 
 \hfill
 \section{Processing Pipeline}
 The aim of the end-to-end architecture we propose, represented in \textbf{\textit{Figure 1}}, is to handle audio signals of variable lengths and learn from the audio signal received.
@@ -98,7 +98,7 @@ One of the main challenges of neural networks in audio processing is that the le
 For long contiguous audio recordings, instead of increasing the input dimension of the network (and consequently the number of parameters and its complexity), it is preferable to split the audio waveform into shorter frames: in this way, we keep the network compact so it can process audio waveforms of any length.
 
 However, letting the model process each frame is too expensive (from the computational point of view). For this reason, we can use a VAD (Voice Activity Detection) or a Silence Filter to let the model process just the frames containing voice. This component should be very compact, not so expensive and fast; it could be part of a software or even a little piece of hardware (like some home device that we use nowadays).
-Only a batch of subsequent windows will be processed. For each of these windows a Feature Extraction module will extract 80 Mels, 40 MFCC, 40MFCC+deltas or no extraction at all and then this will be the input of our model.
+Only a batch of subsequent windows will be processed. For each of these windows a Feature Extraction module will extract 80 Mels, 40 MFCC, 40MFCC + $\Delta$s or no extraction at all: this will be the input to our model.
 
 \subsection{Aggregation of Audio Frames}
 During the classification we need to aggregate the predictions to come up to a decision, as illustrated in \textbf{\textit{Figure 1}}; for this reason, different fusion rules can be used to reach a final decision, such as the \textit{majority vote} or the \textit{sum rule}.
@@ -123,16 +123,16 @@ We decided to create two different datasets:
 \end{itemize}
 
 \subsection{Dataset Partitioning}
-We divided both datasets into train-validation-test sets as suggested by Google Dataset’s README file and we used a split of 30K-3K-3K for the ten classes dataset and 84K-9K-11K for the twenty-one classes dataset. The training set is used to train the network, while the validation one is used to evaluate the network performance during the training and to allow early-stopping to save the model with the lowest validation error, preventing overfitting. The test set is used to evaluate the network’s final score that reaches the best performance.
+We divided both datasets into train-validation-test sets as suggested by Google Dataset’s README file and we used a split of 30K-3K-3K for the ten classes dataset and 84K-9K-11K for the twenty-one classes one. The training set is used to train the network, while the validation one is used to evaluate the network performance during the training and to allow early-stopping to save the model with the lowest validation error, preventing overfitting. The test set is used to evaluate the network’s final score that reaches the best performance.
 
 \subsection{Features extraction}
 
 We decided to study four different types of features in order to compare them and tried to see which was the best able to solve our problem:
 \begin{itemize}
-\item \textbf{No feature extraction}: we trained a specific model (1D CNN) directly on the raw signal (a 16,000 elements vector);
-\item \textbf{80 Mel spectrogram}: we took the Fourier Transform of (a windowed excerpt of) the raw signal and mapped the powers of the spectrum obtained into the mel scale (using triangular overlapping windows);
+\item \textbf{No feature extraction}: we trained a specific model (1DCNN) directly on the raw signal (a 16,000 elements vector);
+\item \textbf{80 Mels spectrogram}: we took the Fourier Transform of (a windowed excerpt of) the raw signal and mapped the powers of the spectrum obtained into the mel scale (using triangular overlapping windows);
 \item \textbf{40 Mel-frequency cepstral\footnote{The cepstrum is the result of the Fourier Transform applied to the signal spectrum, in decibel.} coefficients (MFCC)}: those coefficients are obtained after the computation of the Discrete Cosine Transform (DCT) on the logarithm of the Mel spectrogram;
-\item \textbf{40 MFCC + Delta + Delta-Delta}: matrix containing the MFCCs previously computed, their first derivative (Delta) and second derivative (Delta-Delta).
+\item \textbf{40 MFCC + $\Delta$s}: matrix containing the MFCCs previously computed, their first and second derivatives.
 \end{itemize}
 We used the \textit{Librosa Python Library} to compute those features, in particular we used the following functions:
 \begin{itemize}
@@ -153,22 +153,21 @@ We used the \textit{Librosa Python Library} to compute those features, in partic
 \end{small}
 \end{figure*}
 
-The proposed architecture (shown in \textbf{\textit{Figure 2}} at page 4) is made of four \textit{convolutional layers} interlaced with max pooling layers and followed by two \textit{fully connected layers} and an output layer.
+The proposed architecture, shown in \textbf{\textit{Figure 2}}, is made of four convolutional layers interlaced with max pooling layers and followed by two fully connected layers and an output layer.
 
 The input consists of an array of 16,000 dimensions, which represents a 1-second audio sample at 16kHz.
-The proposed 1D CNN has large receptive fields in the first convolutional layers since it is assumed that the first layers should have a more “global view” of the audio signal. The output of the last pooling layer, for all feature maps, is flattened and represents the input for a fully connected layer. In order to reduce overfitting, batch normalization is applied after the activation function of each convolution layer. After the last pooling layer, there are two fully connected layers with 128 and 64 neurons respectively; dropout is applied with a probability of 0.25 for both layers.
+The proposed 1DCNN has large receptive fields in the first convolutional layers since it is assumed that the first layers should have a more “global view” of the audio signal. The output of the last pooling layer, for all feature maps, is flattened and represents the input for a fully connected layer. In order to reduce overfitting, batch normalization is applied after the activation function of each convolution layer. After the last pooling layer there are two fully connected layers with 128 and 64 neurons respectively; dropout is applied with a probability of 0.25 for both layers.
 
 Keeping in mind the architecture shown in \textbf{\textit{Figure 2}}, it is possible to omit a signal processing module because the network is strong enough to extract relevant low-level and high-level information from the audio waveform.
-
 In the case of multiclass classification, the number of neurons of the output layer is the number of classes. Using the \textit{softmax} as activation function for the output layer, each output neuron indicates the membership degree of the input samples for each class.
 
 \subsection{DSConv Model}
 This model uses Depthwise Separable Convolutions. A separable convolution uses less parameters, less memory and less computations than regular convolutional layers, and in general it even performs better.
-There are two types of Separable convolution: Spatial and Depthwise.
+There are two types of Separable Convolution: Spatial and Depthwise.
 
 Spatial Separable Convolutions divide a kernel into two smaller kernels (e.g. division of a 3$\times$3 kernel into a 3$\times$1 and 1$\times$3 kernel). Instead of considering one convolution with 9 multiplications, we handled two convolutions with 3 multiplications each (6 in total) to achieve the same result. With a lower number of multiplications, the computational complexity significantly decreases, and the network is able to run and train faster.
 
-Depthwise Separable Convolutions use kernels that cannot be “split” into two smaller kernels that apply two different convolutions: the \textit{depthwise convolution}, which result will be the input for the \textit{pointwise} (1$\times$1) one.
+Depthwise Separable Convolutions use kernels that cannot be split into two smaller kernels that apply two different convolutions: the \textit{depthwise convolution}, which result will be the input for the \textit{pointwise} (1$\times$1) one.
 
 In \textbf{\textit{Figure 3}} (at page 4) you can see the difference between a normal 3D Convolution and a Depthwise one, and the final Depthwise Separable Convolutions block we used. 
 \begin{figure*}[t]
@@ -225,27 +224,26 @@ We implemented three different variants: \textit{Large}, \textit{Medium} and \te
 \end{center}
 
 \subsection{Ensemble}
-We built three kinds of ensembles: \textit{large}, \textit{medium} and \textit{small}, in order to have models that can fit different hardware sizes.  The ensembles simply pick the two best models and compute the average of their final prediction, in this way we reached the best accuracy paying a high price: larger networks.
+As stated before, we built three kinds of ensembles: \textit{Large}, \textit{Medium} and \textit{Small}, in order to have models that can fit different hardware sizes.  The ensembles simply pick the two best models and compute the average of their final prediction, in this way we reached the best accuracy paying a high price: larger networks.
 
-All models are trained with the \textbf{Google Tensorflow 2.1} Framework with \textbf{Keras} using the standard \textit{Sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32, the models were trained for 100 epochs with initial learning rate of $10^{-4}$. An early stopping with a patience of 10 epochs was applied to avoid overfitting.
+All models were trained with the \textbf{Google Tensorflow 2.1} Framework with \textbf{Keras} using the standard \textit{Sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32, the models were trained for 100 epochs with initial learning rate of $10^{-4}$. An early stopping with a patience of 10 epochs was applied to avoid overfitting.
 
 \section{Results}
 We trained each DSConv network for all the features we described in Section IV to see if there was any difference between each set. As stated before, we used two different datasets, one made of ten class and another one of twenty-one.
 
-We found that the number of convolutional layers played a key role in detecting high-level concepts, both for the DSconv models and the 1DCNN one. The number of convolutional layers in our models was determined in an experiment using the audio files of the Google Speech Commands V2 Dataset.
+We found that the number of convolutional layers played a key role in detecting high-level concepts, both for the DSConv models and the 1DCNN one. The number of convolutional layers in our models was determined in an experiment using the audio files of the Google Speech Commands V2 Dataset.
 
 We faced the overfitting problem, recognizing the importance of the early-stopping procedure during the training comparing the test scores of the last epochs of the models with the best ones found by the \texttt{ModelCheckpoint} function of Keras (using the validation set).
-It took some time, for us, to choose the best metrics to use to evaluate our models, and at the end we decided \textit{accuracy} was the best choice. 
-We also measured the prediction speed of each model with and without Feature Extraction. 
-%We should not consider \textit{multiplication} as metric because it is an indirect alternative for a direct metric such as \textit{latency}.
+It took some time, for us, to choose the best metrics to use to evaluate our models, and at the end we decided \textit{accuracy} was the best choice.
 
-We also measured the prediction speed of each model with and without Feature Extraction. We should not consider multiplication as metric because it is an indirect alternative for a direct metric such as latency.
+We also measured the prediction speed of each model with and without Feature Extraction. 
+%We should not consider multiplication as metric because it is an indirect alternative for a direct metric such as latency.
 
 Furthermore, we noticed that predicting one example or a batch made of ten examples required almost the same amount of time: this happened because TensorFlow makes tensors operations. In the final implementation this fact should be taken into account in order to minimize the computational cost.
 
-In Tables II, III, IV, V, VI you can see the accuracy and the speed prediction of our models: 40MFCCs + Deltas does not perform better, on the contrary the models have worse accuracy, a larger number of parameters and they are slower.
-There is not so much difference between using 80 Mels or 40 MFCCs, calculating MFCC requires slightly more time since they are calculated after the Mels but MFCC requires almost the half of parameters.
-The fastest network is the 1DCNN on raw data since it has not to calculate any feature extraction, but is the worst in terms of accuracy.
+In Tables II, III, IV, V, VI we summarized the accuracy and the speed prediction of our models: the 40MFCCs + $\Delta$s one does not perform better, on the contrary the models have worse accuracy, a larger number of parameters and they are slower.
+There is not so much difference between using 80 Mels or 40 MFCCs, calculating MFCC requires slightly more time since they are calculated after the Mels but MFCC requires almost half of the parameters.
+The fastest network is the 1DCNN on raw data since it has not to calculate any feature extraction, but it is the worst in terms of accuracy.
 The best accuracy is obtained by the ensemble network (the slower and larger model).
 The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% accuracy and 38.23 ms of prediction speed.
 \begin{center}
@@ -267,7 +265,7 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
 \end{center}
 
 \begin{table*}[]
-\scalebox{1.38}{
+\scalebox{1.46}{
 \begin{tabular}{@{}cllllll@{}}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{}} &
@@ -345,25 +343,25 @@ The smallest model is the DSConvSmall + 40MFCCs with 127K parameters, 92.9\% acc
   \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} \\ \midrule
 \textbf{Accuracy \%}   & 96.8    & 96.4   & 95.6 & 95.2     & 95.0   & 94.2 \\ \midrule
 \textbf{\# parameters} & 2,624,790 & 1,303,726 & 691,463 & 2,498,019 & 1,970,227 & 1,379,431 \\ \midrule
-\textbf{Speed (ms}     & 131.01   & 122.04    & 106.09 & 125.9    & 114.21    & 109.03 \\ \bottomrule
+\textbf{Speed (ms)}     & 131.01   & 122.04    & 106.09 & 125.9    & 114.21    & 109.03 \\ \bottomrule
 \end{tabular}}
 \caption{Ensemble performances on 10 and 21-commands datasets.}
 \end{table*}
 
 %\pagebreak
 \section{Concluding Remarks}
-In this paper, an end-to-end architecture for the keyword spotting task has been proposed. We built two neural networks and an ensemble between the best models.
+In this paper, an end-to-end architecture for the Keyword Spotting Task has been proposed. We built two neural networks and an ensemble between the best models.
 
-The 1DCNN consists of five convolutional layers. Instead of using handcrafted static filterbanks (such as the ones used to extract MFCC features), the proposed 1DCNN learns the filters directly from the audio waveform. The other network receives as input features 80Mels, 40MFCCs or 40MFCCs + Deltas and consists of four or five DSConv layers. Furthermore, the 1DCNN is faster than the other models, but unfortunately does not reach the same accuracy.
+The 1DCNN consists of five convolutional layers. Instead of using handcrafted static filterbanks (such as the ones used to extract MFCC features), the proposed 1DCNN learns the filters directly from the audio waveform. The other network receives as input features 80Mels, 40MFCCs or 40MFCCs + $\Delta$s and consists of four or five DSConv layers. Furthermore, the 1DCNN is faster than the other models, but unfortunately does not reach the same accuracy.
 
 As we can see from the results we obtained, all the features work well but 40MFCCs seems slightly better that the others, the 1DCNN on raw waveform performed the worst way.
-We then reduced the number of parameters of the DSConv model by lowering the number of the filters for each convolution. We proposed three version of the DSConv model: Large, Medium and Small.
+We then reduced the number of parameters of the DSConv model by lowering the number of the filters for each convolution. We proposed three version of the DSConv model: \textit{Large}, \textit{Medium} and \textit{Small}.
 Our models achieve excellent results but we did not beat the state of the art accuracy of 97.4\% reached in [4]. You can find a summary of our model compared with the state of the art in TABLE VII at page 7.
-We noticed that if we pick more frames per second, as described in the end-to-end architecture, the model has many “points of view” of the word, so in the real world it actually performs better than the test accuracy measured. In various tests we made, the networks (even the 1DCNN, the one with the worst accuracy) captured all the words we were saying thank to the multiple windows – fusion rule technique.
+We noticed that if we picked more frames per second, as described in the end-to-end architecture, the model had many “points of view” of the word, so in the real world it could actually perform better than the test accuracy measured. In various tests we made, the networks (even the 1DCNN, the one with the worst accuracy) captured all the words we were saying thank to the multiple windows – fusion rule technique.
 
-Further improvement could be exploring the SincConv, attention mechanism and LSTMs.
+Further improvements could be explored with the SincConv, Attention Mechanism and LSTMs.
 
-You can find the code on github [X]
+The code can be found on the following GitHub page: \texttt{https://github.com/ivaste/KeyWordSpotting}.
 
 \begin{table*}[]
 \scalebox{1.79}{
@@ -373,38 +371,46 @@ You can find the code on github [X]
 SincConv                   & 97.4                 & 162,000                & 40.35               \\ \hline
 Our Ensemble Large         & \textbf{96.8}        & 2,624,790              & 131.01              \\ \hline
 Our Ensemble Medium        & 96.4                 & 1,303,726              & 122.04              \\ \hline
-Our DSConvLarge + 80Mels  & 96.0                 & 874,930                & 41.44               \\ \hline
+Our DSConvLarge + 80 Mels  & 96.0                 & 874,930                & 41.44               \\ \hline
 Our Ensemble Small         & 95.6                 & 691,463                & 106.09              \\ \hline
-Our DSConvMedium + 40MFCC & 95.0                 & 262,998                & 38.23               \\ \hline
+Our DSConvMedium + 40 MFCC & 95.0                 & 262,998                & 38.23               \\ \hline
 1DCNN on raw data         & 93.0                 & 257,018                & \textbf{28.71}      \\ \hline
-Our DSConvSmall + 40MFCC   & 92.9                 & \textbf{127,818}       & 38.23               \\ \hline
+Our DSConvSmall + 40 MFCC   & 92.9                 & \textbf{127,818}       & 38.23               \\ \hline
 \end{tabular}}
-\caption{10-commands}
+\caption{Summary of the 10-commands networks performances.}
 \end{table*}
 
 \begin{table*}[]
-\scalebox{1.79}{
+\scalebox{1.83}{
 \begin{tabular}{llll}
 \cline{2-4}
-                          & Accuracy \%   & \# parameters    & Speed (ms)     \\ \hline
+                          & \textbf{Accuracy \%}   & \# \textbf{Parameters}    & \textbf{Speed (ms)}     \\ \hline
 SincConv                  & 97.4          & 162,000          & 40.35          \\ \hline
 Our Ensemble Large        & \textbf{95.2} & 2,498,019        & 125.9          \\ \hline
 Our Ensemble Medium       & 95.0          & 1,970,227        & 114.21         \\ \hline
 Our Ensemble Small        & 94.2          & 1,379,431        & 109.03         \\ \hline
-Our Ensemble + 40MFCC     & 93.7          & 738,321          & 39.66          \\ \hline
-Our DSConvMedium + 80Mels & 92.7          & 832,673          & 39.72          \\ \hline
-Our DSConvSmall + 80Mels  & 90.0          & 604,757          & 37.97          \\ \hline
+Our Ensemble + 40 MFCC     & 93.7          & 738,321          & 39.66          \\ \hline
+Our DSConvMedium + 80 Mels & 92.7          & 832,673          & 39.72          \\ \hline
+Our DSConvSmall + 80 Mels  & 90.0          & 604,757          & 37.97          \\ \hline
 1DCNN on raw data         & 89.1          & \textbf{257,733} & \textbf{28.25} \\ \hline
 \end{tabular}}\\
-\caption{21-commands}
+\caption{Summary of the 21-commands networks performances.}
 \end{table*}
 
+\newpage
 \section*{Work Setup}
-Bla bla
-\section*{What we learnt as students}
-We cannot say we faced an easy problem. With this project we learnt the meaning of the word "teamwork". It took a long time, for us, to read, understand, analyze and synthesize all the articles we read; we never did something like this before. We co-operated writing the code (run on an ASUS ROG GL703GM \textit{Scar Edition}, with processor Intel Core i7-8750H Hexa-Core, Nvidia  GeForce GTX 1060 and 16GB RAM memory), and in the meanwhile we started to think to what to write to present a well-written paper.
+The decided to organize our work in the following way:
+\begin{itemize}
+\item \textbf{Dataset study \& \LaTeX\xspace document \textit{alpha} version}: Stefano Ivancich;
+\item \textbf{Scientific articles analysis}: Stefano Ivancich, Luca Masiero;
+\item \textbf{Code}: Stefano Ivancich;
+\item \textbf{Tests \& \LaTeX\xspace document final version}: Luca Masiero (the code run on an ASUS ROG GL703GM \textit{Scar Edition}, with processor Intel Core i7-8750H Hexa-Core, Nvidia  GeForce GTX 1060 and 16GB RAM memory).
+\end{itemize}
 
-We learnt how to respect deadlines given the one to the other.
+\section*{What we have learnt as students}
+We cannot say we faced an easy problem. It took a relatively long time, for us, to read, understand, analyze and synthesize all the five articles we read; we never did something like this before. 
+
+We learnt how to respect deadlines given the one to the other, we learnt how to use the Anaconda Prompt, Jupyter Notebooks and how to write a scientifc article with \LaTeX.
 
 \begin{thebibliography}{1}
 \bibitem{1}
@@ -417,8 +423,10 @@ Sajjad Abdoli, Patrick Cardinal and Alessandro Lameiras Koerich. \textit{End-to-
 Yundong Zhang, Naveen Suda, Liangzhen Lai and Vikas Chandra. \textit{Hello Edge: Keyword Spotting on Microcontrollers}. arXiv:1711.07128v3 [cs.SD] 14 Feb 2018.
 
 \bibitem{4}
-Simon Mittermaier, Ludwig Kurzinger, Bernd Waschneck and Gerhard Rigoll. \textit{SMALL-FOOTPRINT KEYWORD SPOTTING ON RAW AUDIO DATA WITH SINC-CONVOLUTIONS}. arXiv:1911.02086v1 [eess.AS] 5 Nov 2019
+Simon Mittermaier, Ludwig Kurzinger, Bernd Waschneck and Gerhard Rigoll. \textit{Small-Footprint Keyword Spotting on Raw Audio Data with Sinc-Convolutions}. arXiv:1911.02086v1 [eess.AS] 5 Nov 2019
 
+\bibitem{5}
+G Alon. \textit{Key-word spotting—the base technology for speech analytics}. Natural Speech Communications, 2005 - crmxchange.com
 \end{thebibliography}
 \end{document}
 
