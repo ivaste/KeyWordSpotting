@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  10 AUG 2020 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  12 AUG 2020 10:01
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -410,54 +410,91 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedLeftParindent=\skip68
 \RaggedRightParindent=\skip69
 \JustifyingParindent=\skip70
+) ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortbl.
+sty"
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+
+("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen169
+\ar@mcellbox=\box56
+\extrarowheight=\dimen170
+\NC@list=\toks21
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box57
+)
+\everycr=\toks22
+\minrowclearance=\skip73
+)
+\rownum=\count145
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count145
-\float@exts=\toks21
-\float@box=\box56
-\@float@everytoks=\toks22
-\@floatcapt=\box57
+\c@float@type=\count146
+\float@exts=\toks23
+\float@box=\box58
+\@float@everytoks=\toks24
+\@floatcapt=\box59
 )
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.st
 y"
-\wrapoverhang=\dimen169
-\WF@size=\dimen170
-\c@WF@wrappedlines=\count146
-\WF@box=\box58
-\WF@everypar=\toks23
+\wrapoverhang=\dimen171
+\WF@size=\dimen172
+\c@WF@wrappedlines=\count147
+\WF@box=\box60
+\WF@everypar=\toks25
 Package: wrapfig 2003/01/31  v 3.6
 ) ("Key Word Spotting.aux")
 \openout1 = `"Key Word Spotting.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 -- Lines per column: 56 (exact).
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
-\scratchdimen=\dimen171
-\scratchbox=\box59
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count150
-\MPscratchDim=\dimen172
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count148
+\scratchdimen=\dimen173
+\scratchbox=\box61
+\nofMPsegments=\count149
+\nofMParguments=\count150
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen174
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
+\everyMPtoPDFconversion=\toks27
 )
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -527,122 +564,109 @@ Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 26.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 47.
+LaTeX Info: Redefining \selectfont on input line 27.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 48.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{C:/Users/lagge/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-<End-To-End.png, id=11, 1598.97375pt x 1090.0725pt>
+<End-To-End.png, id=12, 1598.97375pt x 1090.0725pt>
 File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
-Package pdftex.def Info: End-To-End.png  used on input line 108.
-(pdftex.def)             Requested size: 431.72868pt x 294.3235pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 139.
+Package pdftex.def Info: End-To-End.png  used on input line 110.
+(pdftex.def)             Requested size: 367.75623pt x 250.7114pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 141.
 
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<1DCNN.png, id=13, 3152.77875pt x 864.22874pt>
+<1DCNN.png, id=14, 3152.77875pt x 864.22874pt>
 File: 1DCNN.png Graphic file (type png)
 <use 1DCNN.png>
-Package pdftex.def Info: 1DCNN.png  used on input line 150.
+Package pdftex.def Info: 1DCNN.png  used on input line 153.
 (pdftex.def)             Requested size: 504.45491pt x 138.27942pt.
 [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <./End-To-End.png> <./1DCNN.png>]
-<confronto3.jpg, id=24, 879.285pt x 465.99094pt>
+<confronto3.jpg, id=19, 879.285pt x 465.99094pt>
 File: confronto3.jpg Graphic file (type jpg)
 <use confronto3.jpg>
-Package pdftex.def Info: confronto3.jpg  used on input line 175.
+Package pdftex.def Info: confronto3.jpg  used on input line 182.
 (pdftex.def)             Requested size: 492.39626pt x 260.95314pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 184.
+               Default added (so using `tbp') on input line 187.
+
+[3 <./End-To-End.png>]
+Underfull \vbox (badness 3417) has occurred while \output is active []
+
+ [4 <./1DCNN.png> <./confronto3.jpg>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 254.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 250.
+               Default added (so using `tbp') on input line 271.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 267.
-
-
-Overfull \hbox (0.69923pt too wide) in paragraph at lines 284--285
+Overfull \hbox (0.6991pt too wide) in paragraph at lines 288--289
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 288.
+               Default added (so using `tbp') on input line 292.
 
 
-Overfull \hbox (0.89389pt too wide) in paragraph at lines 305--306
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 309--310
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 309.
+               Default added (so using `tbp') on input line 313.
 
 
-Overfull \hbox (0.89389pt too wide) in paragraph at lines 326--327
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 330--331
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 330.
+               Default added (so using `tbp') on input line 334.
 
 
-Overfull \hbox (0.50885pt too wide) in paragraph at lines 347--348
+Overfull \hbox (0.50885pt too wide) in paragraph at lines 351--352
 [][] 
  []
 
-[4]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 366.
-
-
-Overfull \hbox (6.64659pt too wide) in paragraph at lines 379--380
-[][] 
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 383.
-
-
-Overfull \hbox (6.54353pt too wide) in paragraph at lines 396--397
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
-
- []
-
-[5 <./confronto3.jpg>] [6]
-Underfull \hbox (badness 1584) in paragraph at lines 405--406
-[]\OT1/ptm/b/n/10 Scientific ar-ti-cles anal-y-sis\OT1/ptm/m/n/10 : Ste-fano Iv
-an-cich, Luca
+<tab1.jpg, id=30, 1239.88219pt x 368.87813pt>
+File: tab1.jpg Graphic file (type jpg)
+<use tab1.jpg>
+Package pdftex.def Info: tab1.jpg  used on input line 373.
+(pdftex.def)             Requested size: 371.96753pt x 110.66428pt.
+<tab2.jpg, id=31, 1245.9047pt x 375.65344pt>
+File: tab2.jpg Graphic file (type jpg)
+<use tab2.jpg>
+Package pdftex.def Info: tab2.jpg  used on input line 381.
+(pdftex.def)             Requested size: 373.77429pt x 112.6969pt.
+[5] [6]
+Underfull \hbox (badness 4940) in paragraph at lines 391--392
+[]\OT1/ptm/b/n/10 Literature re-search:\OT1/ptm/m/n/10 : Ste-fano Ivan-cich and
+ Luca
  []
 
 
@@ -656,33 +680,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] ("Key Word Spotting.aux") ) 
+[7 <./tab1.jpg> <./tab2.jpg>] ("Key Word Spotting.aux") ) 
 Here is how much of TeX's memory you used:
- 5090 strings out of 492970
- 82487 string characters out of 3126594
- 178458 words of memory out of 3000000
- 8846 multiletter control sequences out of 15000+200000
- 50950 words of font info for 106 fonts, out of 3000000 for 9000
+ 5662 strings out of 492970
+ 89267 string characters out of 3126594
+ 187160 words of memory out of 3000000
+ 9406 multiletter control sequences out of 15000+200000
+ 48718 words of font info for 104 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,15n,39p,868b,373s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.
-9/fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lagge/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lagge/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lagge
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/
-Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/lagge/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/lagge/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/lagge/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/lagge/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Key Word Spotting.pdf" (7 pages, 667879 bytes).
+ 41i,18n,39p,892b,383s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/lagge/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/l
+agge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+<C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr9.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lagge/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lagge/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lagge/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/lagg
+e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/
+lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/U
+sers/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
+C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on "Key Word Spotting.pdf" (7 pages, 998785 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
