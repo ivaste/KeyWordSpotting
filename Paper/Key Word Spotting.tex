@@ -339,12 +339,12 @@ The smallest model is the DSConvSmall + 40 MFCCs with 127K parameters, 92.9\% ac
   \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}10-commands\\ (30K-3K-3K)\end{tabular}}} &
   \multicolumn{3}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}21-commands\\ (84K-9K-11K)\end{tabular}}} \\ \cmidrule(l){2-7} 
 \multicolumn{1}{l}{} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv M 40 MFCC\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv M 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv S 40 MFCC\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} &
-  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} \\ \midrule
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Large}\\ DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Medium}\\DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv M 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\DSConv M 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv S 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Large}\\DSConv L 80 Mels\\ +\\ DSConv L 40 MFCC\\ +\\ DSConv L 40 MFCC $\Delta$\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Medium}\\DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} &
+  \multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}\textbf{Small}\\DSConv L 40 MFCC\\ +\\ DSConv M 80 Mels\\ +\\ DSConv L 40 MFCC\end{tabular}}} \\ \midrule
 \textbf{Accuracy \%}   & 96.8    & 96.4   & 95.6 & 95.2     & 95.0   & 94.2 \\ \midrule
 \textbf{\# parameters} & 2,624,790 & 1,303,726 & 691,463 & 2,498,019 & 1,970,227 & 1,379,431 \\ \midrule
 \textbf{Speed (ms)}     & 131.01   & 122.04    & 106.09 & 125.9    & 114.21    & 109.03 \\ \bottomrule
