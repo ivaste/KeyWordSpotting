@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  12 AUG 2020 15:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  29 AUG 2020 11:42
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -615,60 +615,55 @@ Underfull \vbox (badness 3417) has occurred while \output is active []
  [4 <./1DCNN.png> <./confronto3.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 254.
+               Default added (so using `tbp') on input line 259.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 271.
+               Default added (so using `tbp') on input line 276.
 
 
-Overfull \hbox (0.6991pt too wide) in paragraph at lines 288--289
+Overfull \hbox (0.6991pt too wide) in paragraph at lines 293--294
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 292.
+               Default added (so using `tbp') on input line 297.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 309--310
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 314--315
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 313.
+               Default added (so using `tbp') on input line 318.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 330--331
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 335--336
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 334.
+               Default added (so using `tbp') on input line 339.
 
 
-Overfull \hbox (0.50885pt too wide) in paragraph at lines 351--352
+Overfull \hbox (0.50885pt too wide) in paragraph at lines 356--357
 [][] 
  []
 
 <tab1.jpg, id=30, 1239.88219pt x 368.87813pt>
 File: tab1.jpg Graphic file (type jpg)
 <use tab1.jpg>
-Package pdftex.def Info: tab1.jpg  used on input line 373.
+Package pdftex.def Info: tab1.jpg  used on input line 378.
 (pdftex.def)             Requested size: 371.96753pt x 110.66428pt.
 <tab2.jpg, id=31, 1245.9047pt x 375.65344pt>
 File: tab2.jpg Graphic file (type jpg)
 <use tab2.jpg>
-Package pdftex.def Info: tab2.jpg  used on input line 381.
+Package pdftex.def Info: tab2.jpg  used on input line 386.
 (pdftex.def)             Requested size: 373.77429pt x 112.6969pt.
 [5] [6]
-Underfull \hbox (badness 4940) in paragraph at lines 391--392
-[]\OT1/ptm/b/n/10 Literature re-search:\OT1/ptm/m/n/10 : Ste-fano Ivan-cich and
- Luca
- []
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -684,11 +679,11 @@ Before submitting the final camera ready copy, remember to:
 Here is how much of TeX's memory you used:
  5662 strings out of 492970
  89267 string characters out of 3126594
- 187160 words of memory out of 3000000
+ 188160 words of memory out of 3000000
  9406 multiletter control sequences out of 15000+200000
  48718 words of font info for 104 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,18n,39p,892b,383s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,18n,39p,892b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lagge/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/l
@@ -705,7 +700,7 @@ lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/U
 sers/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on "Key Word Spotting.pdf" (7 pages, 999969 bytes).
+Output written on "Key Word Spotting.pdf" (7 pages, 1000133 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

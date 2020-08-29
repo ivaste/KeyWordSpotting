@@ -40,10 +40,10 @@ Email: luca.masiero.8@studenti.unipd.it}}
 \maketitle
 
 \begin{abstract}
-In this paper we present an end-to-end approach for the Keyword Spotting task: it consists of a sliding window of one second, a Voice Activity Detection module, a feature extraction module, a neural network and a fusion rule.
+In this paper we present an end-to-end approach for the Keyword Spotting task: it consists of a sliding window technique of one second, a Voice Activity Detection module, a feature extraction module, a neural network and a fusion rule.
 
 We explore the application of a 1D Convolutional Neural Network (1DCNN) that directly learns a representation from the audio signal, a Depthwise Convolution (DSConv) and an ensemble of the best models.
-The proposed models achieve a maximum accuracy of 96.8\% with a small footprint of 127K parameters on the Google Speech Commands Dataset V2 (for the 10-commands and 21-commands recognition tasks).
+We achieve a maximum accuracy of 96.8\% with the largest model on the Google Speech Commands Dataset V2 (for the 10-commands and 21-commands recognition tasks).
 
 We also compare the performances of our networks on different feature extraction methods such as 80 Mel, 40 MFCCs and 40MFCCs + $\Delta$s.
 \end{abstract}
@@ -68,8 +68,8 @@ In this paper we will:
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
 \item present an end-to-end architecture for the Keyword Spotting task;
-\item try different audio features (raw data, 80 Mels, 40 MFCC and 40 MFCC with first and second derivatives, represented by the symbol $\Delta$;
-\item train different type of neural networks (1DCNN on raw data and DSConv CNN on features);
+\item try different audio features (raw data, 80 Mels, 40 MFCC and 40 MFCC with first and second derivatives, represented by the symbol $\Delta$);
+\item train different types of neural networks (1DCNN on raw data and DSConv CNN on features);
 \item build an ensemble of the best models;
 \item compare prediction speed and number of parameters between the models.
 \end{itemize}
@@ -89,7 +89,7 @@ For the next thirty years, researchers developed devices capable of recognizing 
 
 In recent times, however, the HMMs were challenged by the introduction of Deep Learning and several architectures that work very well with these type of problems: Convolutional Neural Networks take advantage of weight-sharing and the convolution operation (which is shift-invariant in the data representation domain), while Recurrent Neural Networks (RNN) are able to store a huge quantity of information.
 
-Our two neural networks are inspired by [2] and [3]. In [2] the authors apply 1DCNN on raw signals for environment sound classification: we slightly modified the structure to adapt it to our task. In [3] the authors made some improvement on the MobileNet for Mobile Vision Applications using DSConv. 
+Our two neural networks are inspired by [2] and [3]. In [2] the authors apply 1DCNN on raw signals for environment sound classification: we slightly modified the structure to adapt it to our task. In [3] the authors made some improvements on the MobileNet for Mobile Vision Applications using DSConv. 
 \hfill
 
 \section{Processing Pipeline}
@@ -123,7 +123,7 @@ We decided to create two different datasets:
 \end{itemize}
 
 \subsection{Dataset Partitioning}
-We divided both datasets into train-validation-test sets as suggested by Google Dataset’s README file and we used a split of 30K-3K-3K for the ten classes dataset and 84K-9K-11K for the twenty-one classes one. 
+We divided both datasets into train-validation-test sets as suggested by Google Dataset’s README file and we used a split of 30K-3K-3K for the ten classes dataset and of 84K-9K-11K for the twenty-one classes one. 
 
 The training set is used to train the network, while the validation set is used to evaluate the network performance during the training and to allow early-stopping to save the model with the lowest validation error, preventing overfitting. The test set is used to evaluate the network’s final score that reaches the best performance.
 
@@ -151,7 +151,7 @@ We used the \textit{Librosa Python Library} to compute these features, in partic
 \begin{figure*}
 \centering
 \includegraphics[scale=0.16]{1DCNN}
-\caption{The architecture of the proposed 1D CNN model.}
+\caption{The architecture of the proposed 1DCNN model.}
 \end{figure*}
 
 The proposed architecture, shown in Fig. 2, is made of four convolutional layers interlaced with max pooling layers and followed by two fully connected layers and an output layer.
@@ -172,7 +172,7 @@ Spatial Separable Convolutions divide a kernel into two smaller kernels (e.g. di
 
 Depthwise Separable Convolutions use kernels that cannot be split into two smaller kernels that apply two different convolutions: the \textit{depthwise convolution}, which result will be the input for the \textit{pointwise} (1$\times$1) one.
 
-In Fig. 3 we show the difference between a normal 3D Convolution and a Depthwise one, and the final Depthwise Separable Convolutions block we used. 
+In Fig. 3 we show the difference between a normal 3D Convolution and a Depthwise one, and the final Depthwise Separable Convolution block we used. 
 
 In our work we adopted a Depthwise Separable CNN inspired by [3]. This CNN is made of a 2D CNNs followed by batch normalization and four or five DSConv2D layers. An average pooling, with padding 2$\times$2 and stride 2$\times$2, followed by a fully connected layer, is used in the end to provide global interaction and reduce the total number of parameters in the final layer.
 We implemented three different variants: \textit{Large}, \textit{Medium} and \textit{Small}, described in the Tables at pages 5 and 6, where we tried to reduce the number of parameters still maintaining a good accuracy.
@@ -233,7 +233,7 @@ As stated before, we built three kinds of ensembles (\textit{Large}, \textit{Med
 All models were trained with the \textbf{Google Tensorflow 2.1} Framework with \textbf{Keras} using the standard \textit{Sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32, the models were trained for 100 epochs with initial learning rate of $10^{-4}$. An early stopping with a patience of 10 epochs was applied to avoid overfitting.
 
 \section{Results}
-We trained each DSConv network for all the features we described in Section IV to see if there was any difference between each set. As stated before, we used two different datasets, one made of ten class and another one of twenty-one.
+We trained each DSConv network for all the features we described in Section IV to see if there was any difference between each set. As stated in Sec. V, we used two different datasets, one made of ten class and another one of twenty-one.
 
 We found that the number of convolutional layers played a key role in detecting high-level concepts, both for the DSConv models and the 1DCNN one. The number of convolutional layers in our models was determined in an experiment using the audio files of the Google Speech Commands V2 Dataset.
 
@@ -245,11 +245,16 @@ We also measured the prediction speed of each model with and without Feature Ext
 
 Furthermore, we noticed that predicting one example or a batch made of ten examples required almost the same amount of time: this happened because TensorFlow makes tensors operations. In the final implementation this fact should be taken into account in order to minimize the computational cost.
 
-In Tables II, III, IV, V and VI we summarized the accuracy and the speed prediction of our models: the 40 MFCCs + $\Delta$s one does not perform better, on the contrary the models have worse accuracy, a larger number of parameters and they are slower.
-There is not so much difference between using 80 Mels or 40 MFCCs, calculating MFCC requires slightly more time since they are calculated after the Mels but MFCC requires almost half of the parameters.
-The fastest network is the 1DCNN on raw data since it has not to calculate any feature extraction, but it is the worst in terms of accuracy.
-The best accuracy is obtained by the ensemble network (the slower and larger model).
-The smallest model is the DSConvSmall + 40 MFCCs with 127K parameters, 92.9\% accuracy and 38.23 ms of prediction speed.
+In Tables II, III, IV, V and VI we summarized the accuracy, the number of parameters and the speed prediction of our models: the 40 MFCCs + $\Delta$s one does not perform better, on the contrary this type of model always performed, with a large number of parameters, the worst way.
+
+There is not so much difference between using 80 Mels or 40 MFCCs, calculating MFCC requires slightly more time since they are calculated after the Mels but MFCC requires almost half the parameters.
+
+The fastest network is the 1DCNN on raw data since it has not to calculate any feature extraction, but it is the worst in terms of accuracy (93.0\% of accuracy, 257,018 parameters and 28.71 ms of speed prediction for the 10-commands task, while 89.1\% of accuracy, 257,733 parameters and 28.25 ms of speed prediction for the 21-commands task).
+
+The smallest model is the DSConvSmall + 40 MFCCs with 127K parameters, 92.9\% accuracy and 38.23 ms of speed prediction.
+
+The best accuracy is obtained by the Large Ensemble network (the slower and larger model) that reaches 96.8\% of accuracy but with more than 2.5 million parameters.
+
 \begin{center}
 \begin{table}[]
 \scalebox{1.38}{
@@ -386,9 +391,9 @@ TABLE VIII: Summary of the 21-commands networks performances.
 
 \newpage
 \section*{Work Setup}
-The decided to organize our work in the following way:
+We decided to organize our work in the following way:
 \begin{itemize}
-\item \textbf{Literature research:}: Stefano Ivancich and Luca Masiero;
+\item \textbf{Literature research}: Stefano Ivancich and Luca Masiero;
 \item \textbf{Dataset preparation}: Stefano Ivancich;
 \item \textbf{1DCNN}: Luca Masiero;
 \item \textbf{DSConv}: Stefano Ivancich;
@@ -399,9 +404,9 @@ The decided to organize our work in the following way:
 \end{itemize}
 
 \section*{What we have learnt as students}
-We cannot say we faced an easy problem. We learnt how to research and select papers from scientific literature, set-up a machine learning project, design an end-to-end architecture for Speech Recognition, debug and improve a machine learning model and write with \LaTeX\xspace a scientific paper.
+We cannot say we faced an easy problem. We learnt how to research and select papers from scientific literature, setup a machine learning project, design an end-to-end architecture for Speech Recognition, debug and improve a machine learning model and write a scientific paper with \LaTeX\xspace.
 
-We had several problems using our university cluster, even if it is new and powerful hundreds of students and researchers enqueue jobs everyday, our laptops resulted ten times faster (the vast majority of the tests run on an ASUS ROG GL703GM \textit{Scar Edition}, with processor Intel Core i7-8750H Hexa-Core, Nvidia  GeForce GTX 1060 and 16GB RAM memory).
+We had several problems using our university cluster, even if it is new and powerful hundreds of students and researchers enqueue jobs everyday, our laptops turned out much faster (the vast majority of the tests run on an ASUS ROG GL703GM \textit{Scar Edition}, with processor Intel Core i7-8750H Hexa-Core, Nvidia  GeForce GTX 1060 and 16GB RAM memory).
 
 \begin{thebibliography}{1}
 \bibitem{1}
