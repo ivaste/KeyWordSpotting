@@ -167,9 +167,7 @@ In the case of multiclass classification, the number of neurons of the output la
 
 \subsection{The DSConv model}
 The DSConv model applies Depthwise Separable Convolutions. A separable convolution uses less parameters,  memory and computations than regular convolutional layers, and in general it even performs better.
-There are two types of Separable Convolution: Spatial and Depthwise.
-
-Spatial Separable Convolutions divide a kernel into two smaller kernels (e.g. division of a 3$\times$3 kernel into a 3$\times$1 and 1$\times$3 kernel). Instead of considering one convolution with 9 multiplications, we handled two convolutions with 3 multiplications each (6 in total) to achieve the same result. With a lower number of multiplications, the computational complexity significantly decreases, and the network is able to run and train faster.
+There are two types of Separable Convolution: Spatial\footnote{Spatial Separable Convolutions divide a kernel into two smaller kernels. With a lower number of multiplications for each convolution, the computational complexity significantly decreases, and the network is able to run and train faster.} (not considered here) and Depthwise.
 
 Depthwise Separable Convolutions use kernels that cannot be split into two smaller kernels that apply two different convolutions: the \textit{depthwise convolution}, which result will be the input for the \textit{pointwise} (1$\times$1) one.
 
