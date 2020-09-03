@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  29 AUG 2020 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  3 SEP 2020 12:32
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -565,17 +565,17 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 27.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 48.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 49.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 49.
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{C:/Users/lagge/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
@@ -585,9 +585,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <End-To-End.png, id=12, 1598.97375pt x 1090.0725pt>
 File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
-Package pdftex.def Info: End-To-End.png  used on input line 110.
+Package pdftex.def Info: End-To-End.png  used on input line 111.
 (pdftex.def)             Requested size: 367.75623pt x 250.7114pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 141.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 142.
 
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -596,74 +596,75 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <1DCNN.png, id=14, 3152.77875pt x 864.22874pt>
 File: 1DCNN.png Graphic file (type png)
 <use 1DCNN.png>
-Package pdftex.def Info: 1DCNN.png  used on input line 153.
+Package pdftex.def Info: 1DCNN.png  used on input line 154.
 (pdftex.def)             Requested size: 504.45491pt x 138.27942pt.
 [2]
 <confronto3.jpg, id=19, 879.285pt x 465.99094pt>
 File: confronto3.jpg Graphic file (type jpg)
 <use confronto3.jpg>
-Package pdftex.def Info: confronto3.jpg  used on input line 182.
-(pdftex.def)             Requested size: 492.39626pt x 260.95314pt.
+Package pdftex.def Info: confronto3.jpg  used on input line 183.
+(pdftex.def)             Requested size: 439.64143pt x 232.99489pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 187.
+               Default added (so using `tbp') on input line 188.
 
-[3 <./End-To-End.png>]
-Underfull \vbox (badness 3417) has occurred while \output is active []
-
- [4 <./1DCNN.png> <./confronto3.jpg>]
+[3 <./End-To-End.png>] [4 <./1DCNN.png> <./confronto3.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 259.
+               Default added (so using `tbp') on input line 260.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 276.
+               Default added (so using `tbp') on input line 277.
 
 
-Overfull \hbox (0.6991pt too wide) in paragraph at lines 293--294
+Overfull \hbox (0.6991pt too wide) in paragraph at lines 294--295
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 297.
+               Default added (so using `tbp') on input line 298.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 314--315
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 315--316
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 318.
+               Default added (so using `tbp') on input line 319.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 335--336
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 336--337
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 339.
+               Default added (so using `tbp') on input line 340.
 
 
-Overfull \hbox (0.50885pt too wide) in paragraph at lines 356--357
+Overfull \hbox (0.50885pt too wide) in paragraph at lines 357--358
 [][] 
  []
+
+
+Underfull \vbox (badness 2790) has occurred while \output is active []
 
 <tab1.jpg, id=30, 1239.88219pt x 368.87813pt>
 File: tab1.jpg Graphic file (type jpg)
 <use tab1.jpg>
-Package pdftex.def Info: tab1.jpg  used on input line 378.
+Package pdftex.def Info: tab1.jpg  used on input line 379.
 (pdftex.def)             Requested size: 371.96753pt x 110.66428pt.
 <tab2.jpg, id=31, 1245.9047pt x 375.65344pt>
 File: tab2.jpg Graphic file (type jpg)
 <use tab2.jpg>
-Package pdftex.def Info: tab2.jpg  used on input line 386.
+Package pdftex.def Info: tab2.jpg  used on input line 387.
 (pdftex.def)             Requested size: 373.77429pt x 112.6969pt.
-[5] [6]
+ [5]
+[6]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -683,7 +684,7 @@ Here is how much of TeX's memory you used:
  9406 multiletter control sequences out of 15000+200000
  48718 words of font info for 104 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,18n,39p,892b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,18n,39p,878b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/lagge/AppDat
 a/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/lagge/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/l
@@ -700,7 +701,7 @@ lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/U
 sers/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on "Key Word Spotting.pdf" (7 pages, 1000166 bytes).
+Output written on "Key Word Spotting.pdf" (7 pages, 999507 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
