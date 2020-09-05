@@ -75,7 +75,7 @@ In this paper we will:
 \item compare prediction speed and number of parameters between the models.
 \end{itemize}
 
-The report is structured as follows. In Section II we present the current state of the art in the Speech Recognition field, in Section III we show our approach in order to tackle the problem and in Section IV we explain the pre-processing techniques we used. In Section V we describe the various architectures we considered, in Section VI we report their results and in Section VII we make some extra considerations on future developments and possible improvements.
+The report is structured as follows: in Section II we present the current state of the art in the Speech Recognition field, in Section III we show our approach in order to tackle the problem and in Section IV we explain the pre-processing techniques we used. In Section V we describe the various architectures we considered, in Section VI we report their results and in Section VII we make some extra considerations on future developments and possible improvements.
 
 %\hfill September 22, 2020
 %\subsection{Subsection Heading Here}
@@ -228,7 +228,7 @@ We implemented three different variants: \textit{Large}, \textit{Medium} and \te
 \subsection{Ensemble}
 As stated before, we built three kinds of ensembles (\textit{Large}, \textit{Medium} and \textit{Small}) in order to have models that could fit different hardware sizes. The ensembles simply pick the two best models and compute the average of their final prediction, in this way we reached the best accuracy paying a high price: larger networks.
 
-All models were trained with the Google Tensorflow 2.1 Framework with Keras using the standard \textit{Sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32,
+All models were trained with the Google Tensorflow 2.1 Framework with Keras using the standard \textit{sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32,
 the models were trained for 100 epochs with initial learning rate of 10$^{-4}$. An \textit{early stopping} procedure with a patience of 10 epochs was applied to avoid overfitting.
 
 \section{Results}
@@ -394,9 +394,9 @@ We decided to organize our work in the following way:
 \begin{itemize}
 \item \textbf{Literature research}: Stefano Ivancich and Luca Masiero;
 \item \textbf{Dataset preparation}: Stefano Ivancich;
-\item \textbf{1DCNN}: Luca Masiero;
-\item \textbf{DSConv}: Stefano Ivancich;
-\item \textbf{Ensemble}: Stefano Ivancich;
+\item \textbf{1DCNN}: Stefano Ivancich;
+\item \textbf{DSConv}: Luca Masiero;
+\item \textbf{Ensemble}: Stefano Ivancich and Luca Masiero;
 \item \textbf{Feature Extraction methods}: Luca Masiero;
 \item \textbf{Full Demo}: Stefano Ivancich;
 \item \textbf{\LaTeX\xspace document}: Luca Masiero and Stafano Ivancich;
@@ -405,7 +405,7 @@ We decided to organize our work in the following way:
 \section*{What we have learnt as students}
 We cannot say we faced an easy problem. We learnt how to research and select papers from scientific literature, setup a machine learning project, design an end-to-end architecture for Speech Recognition, debug and improve a machine learning model and write a scientific paper with \LaTeX\xspace.
 
-We had several problems using our university cluster: even if it is new and powerful, hundreds of students and researchers enqueue jobs everyday, our laptops turned out to perform in a much faster way (the vast majority of the tests run on an ASUS ROG GL703GM \textit{Scar Edition}, with a Intel Core i7-8750H Hexa-Core processor, Nvidia  GeForce GTX 1060 and 16GB RAM memory).
+We had several problems using our university cluster: even though it is new and powerful, hundreds of students and researchers enqueue jobs everyday, our laptops turned out to perform better (the tests run on an ASUS ROG GL703GM \textit{Scar Edition}, with a Intel Core i7-8750H Hexa-Core processor, Nvidia  GeForce GTX 1060 and 16GB RAM memory and on a HP Pavilion with a Intel Core i7-7700HQ processor, Nvidia GTX 1050 and 16GB RAM memory).
 
 \begin{thebibliography}{1}
 \bibitem{1}
