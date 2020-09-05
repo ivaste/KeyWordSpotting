@@ -90,8 +90,9 @@ For the next thirty years, researchers developed devices capable of recognizing 
 
 In recent times, however, the HMMs were challenged by the introduction of Deep Learning and several architectures that work very well with these type of problems: Convolutional Neural Networks take advantage of weight-sharing and the convolution operation (which is shift-invariant in the data representation domain), while Recurrent Neural Networks (RNNs) are able to store a huge quantity of information.
 
-Our two neural networks are inspired by [2] and [3]. In [2] the authors apply 1DCNN on raw signals for environment sound classification: we slightly modified the structure to adapt it to our task. In [3] the authors made some improvements on the MobileNet for Mobile Vision Applications using DSConv. 
-\hfill
+Our two neural networks are inspired by [2] and [3]: in [2] the authors apply 1DCNN on raw signals for environment sound classification, we slightly modified the structure to adapt it to our task; from [3] we derived the use of DSConv.
+%previously applied to the MobileNet for Mobile Vision Applications.
+%\hfill
 
 \section{Processing Pipeline}
 The aim of the end-to-end architecture we propose, represented in Fig. 1, is to handle audio signals of variable lengths and learn from the audio signal received.
@@ -101,7 +102,7 @@ One of the main challenges of neural networks in audio processing is that the le
 For long contiguous audio recordings, instead of increasing the input dimension of the network (and consequently the number of parameters and its complexity), it is preferable to split the audio waveform into shorter frames: in this way, we keep the network compact so it can process audio waveforms of any length.
 
 However, letting the model process each frame is too expensive (from the computational point of view): for this reason we can use a VAD (Voice Activity Detection) module or a Silence Filter to let the model process just the frames containing voice. This component should be very compact, cheap and fast; it could be part of a software or even a little piece of hardware (like some home device that we use nowadays).
-Only a batch of subsequent windows will be processed. For each of these windows a Feature Extraction module will extract 80 Mels, 40 MFCC, 40MFCC + $\Delta$s or perform no extraction at all: this will be the input to our model.
+Only a batch of subsequent windows will be processed. For each of these windows a Feature Extraction module will extract 80 Mels, 40 MFCC, 40MFCC + $\Delta$s or perform no extraction at all: this will be the input of our model.
 
 \subsection{Aggregation of audio frames}
 During the classification we need to aggregate the predictions to come up to a decision, as illustrated in Fig. 1; for this reason, different fusion rules can be used to reach a final decision, such as the \textit{majority vote} or the \textit{sum rule}.
@@ -113,7 +114,7 @@ During the classification we need to aggregate the predictions to come up to a d
 \end{figure*}
 
 \section{Signals and Features}
-As stated before, we used the Google Speech Dataset V2. This dataset contains 105,829 audio files in .wav format (duration =  one second) divided in thirty classes, plus an additional class containing five different type of noise of variable duration (about ten seconds for each file).
+As stated before, we used the Google Speech Dataset V2. This dataset contains 105,829 audio files in \textit{.wav} format (duration =  one second) divided in thirty classes, plus an additional class containing five different type of noise of variable duration (about ten seconds for each file).
 
 The core words are "Yes", "No", "Up", "Down", "Left", "Right", "On", "Off", "Stop", "Go", "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", and "Nine". To help distinguish unrecognized words, there are also ten auxiliary words that most speakers only say once: "Bed", "Bird", "Cat", "Dog", "Happy", "House", "Marvin", "Sheila", "Tree", and "Wow".
 
@@ -167,7 +168,7 @@ In the case of multiclass classification, the number of neurons of the output la
 
 \subsection{The DSConv model}
 The DSConv model applies Depthwise Separable Convolutions. A separable convolution uses less parameters,  memory and computations than regular convolutional layers, and in general it even performs better.
-There are two types of Separable Convolution: Spatial\footnote{Spatial Separable Convolutions divide a kernel into two smaller kernels. With a lower number of multiplications for each convolution, the computational complexity significantly decreases, and the network is able to run and train faster.} (not considered here) and Depthwise.
+There are two types of Separable Convolution: Spatial\footnote{Spatial Separable Convolutions divide a kernel into two smaller kernels. There are some significant limitations: due to the fact that not all kernels can be “separated” (or "split") into two smaller kernels, during the training  only a tiny portion of the input will be used.} (not considered here) and Depthwise.
 
 Depthwise Separable Convolutions use kernels that cannot be split into two smaller kernels that apply two different convolutions: the \textit{depthwise convolution}, which result will be the input for the \textit{pointwise} (1$\times$1) one.
 
