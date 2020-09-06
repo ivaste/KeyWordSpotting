@@ -97,7 +97,7 @@ Our two neural networks are inspired by [2] and [3]: in [2] the authors apply 1D
 \section{Processing Pipeline}
 The aim of the end-to-end architecture we propose, represented in Fig. 1, is to handle audio signals of variable lengths and learn from the audio signal received.
 \subsection{Variable audio length}
-One of the main challenges of neural networks in audio processing is that the length of the input sample should be fixed, but the sound captured may have various duration. For this reason, it is necessary to adapt the model making it able to deal with audio signals of different lengths. Moreover, a model should be used for continuous prediction of input audio signals. One way to avoid this constraint, imposed by the input layer of the neural network, is to split the audio signal into different frames of fixed length using a sliding window of one second width.
+One of the main challenges of neural networks in audio processing is that the length of the input sample should be fixed, but the sound captured may have various duration. For this reason, it is necessary to adapt the model making it able to deal with audio signals of different lengths; moreover, a model should be used for continuous prediction of input audio signals. One way to avoid this constraint, imposed by the input layer of the neural network, is to split the audio signal into different frames of fixed length using a sliding window of one second width.
 
 For long contiguous audio recordings, instead of increasing the input dimension of the network (and consequently its complexity and the number of parameters), it is preferable to split the audio waveform into shorter frames: in this way, we keep the network compact so it can process audio waveforms of any length.
 
@@ -229,11 +229,11 @@ We implemented three different variants: \textit{Large}, \textit{Medium} and \te
 \subsection{Ensemble}
 As stated before, we built three kinds of ensembles (\textit{Large}, \textit{Medium} and \textit{Small}) in order to have models that could fit different hardware sizes. The ensembles simply pick the two best models and compute the average of their final prediction, in this way we reached the best accuracy paying a high price: larger networks.
 
-All models were trained with the Google Tensorflow 2.1 Framework with Keras using the standard \textit{sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32,
+All models were trained with the Google TensorFlow 2.1 Framework with Keras using the standard \textit{sparse categorical cross entropy} and \textit{Nadam optimizer}. With a batch size of 32,
 the models were trained for 100 epochs with initial learning rate of 10$^{-4}$. An \textit{early stopping} procedure with a patience of 10 epochs was applied to avoid overfitting.
 
 \section{Results}
-We trained each DSConv network for all the features we described to see if there was any difference between each set. As stated in Sec. IV, we used two different datasets, one made of ten class and another one of twenty-one.
+We trained each DSConv network for all the features we described to see if there was any difference between each set. As stated in Sec. IV, we used two different datasets, one made of ten classes and another one of twenty-one.
 
 We found that the number of convolutional layers played a key role in detecting high-level concepts, both for the DSConv model and the 1DCNN one. The number of convolutional layers in our models was determined in an experiment using the audio files of the Google Speech Commands V2 Dataset.
 
