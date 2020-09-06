@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  5 SEP 2020 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.6)  6 SEP 2020 09:47
 entering extended mode
 **"./Key Word Spotting.tex"
 ("Key Word Spotting.tex"
@@ -587,7 +587,7 @@ File: End-To-End.png Graphic file (type png)
 <use End-To-End.png>
 Package pdftex.def Info: End-To-End.png  used on input line 112.
 (pdftex.def)             Requested size: 367.75623pt x 250.7114pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 143.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 128.
 
 
 ("C:\Users\lagge\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -612,53 +612,53 @@ LaTeX Warning: No positions in optional float specifier.
 [3 <./End-To-End.png>] [4 <./1DCNN.png> <./confronto3.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 259.
+               Default added (so using `tbp') on input line 257.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 276.
+               Default added (so using `tbp') on input line 274.
 
 
-Overfull \hbox (0.6991pt too wide) in paragraph at lines 293--294
+Overfull \hbox (0.6991pt too wide) in paragraph at lines 291--292
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 297.
+               Default added (so using `tbp') on input line 295.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 314--315
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 312--313
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 318.
+               Default added (so using `tbp') on input line 316.
 
 
-Overfull \hbox (0.89377pt too wide) in paragraph at lines 335--336
+Overfull \hbox (0.89377pt too wide) in paragraph at lines 333--334
 [][] 
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 339.
+               Default added (so using `tbp') on input line 337.
 
 
-Overfull \hbox (0.50885pt too wide) in paragraph at lines 356--357
+Overfull \hbox (0.50885pt too wide) in paragraph at lines 354--355
 [][] 
  []
 
 <tab1.jpg, id=30, 1239.88219pt x 368.87813pt>
 File: tab1.jpg Graphic file (type jpg)
 <use tab1.jpg>
-Package pdftex.def Info: tab1.jpg  used on input line 378.
+Package pdftex.def Info: tab1.jpg  used on input line 376.
 (pdftex.def)             Requested size: 371.96753pt x 110.66428pt.
 <tab2.jpg, id=31, 1245.9047pt x 375.65344pt>
 File: tab2.jpg Graphic file (type jpg)
 <use tab2.jpg>
-Package pdftex.def Info: tab2.jpg  used on input line 386.
+Package pdftex.def Info: tab2.jpg  used on input line 384.
 (pdftex.def)             Requested size: 373.77429pt x 112.6969pt.
 [5] [6]
 
@@ -697,7 +697,7 @@ lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/U
 sers/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
 C:/Users/lagge/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on "Key Word Spotting.pdf" (7 pages, 999625 bytes).
+Output written on "Key Word Spotting.pdf" (7 pages, 1000462 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
