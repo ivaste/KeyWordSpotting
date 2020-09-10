@@ -4,6 +4,7 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 
 <!-- ADD GIF demonstartion -->
 .....
+[![KeyWordSpotting](https://)
 
 # Work in progress...
 
@@ -11,7 +12,7 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 
 [📄 Download Paper PDF](https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/Key%20Word%20Spotting.pdf)
 
-[🕹️ Try Live Demo]()
+[🕹️ Try Live Demo](https://github.com/ivaste/KeyWordSpotting/blob/master/LiveDemo.ipynb)
 
 [📺 Watch Presentation]()
 
