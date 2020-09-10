@@ -4,11 +4,11 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 
 <!-- ADD GIF demonstartion -->
 .....
-[![KeyWordSpotting](https://)
+![KeyWordSpotting](https://github.com/ivaste/KeyWordSpotting/blob/master/ReadmeImage.png)
 
 # Work in progress...
 
-[📈 Download Presentation PDF]()
+[📈 Download Presentation PDF](https://github.com/ivaste/KeyWordSpotting/blob/master/Presentation/Presentation.pdf)
 
 [📄 Download Paper PDF](https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/Key%20Word%20Spotting.pdf)
 
