@@ -1,4 +1,4 @@
-# Key-Word Spotting
+# End-to-End Framework for Key-Word Spotting
 Detect a relatively small set of predefined keywords in a stream of user utterances.
 
 
