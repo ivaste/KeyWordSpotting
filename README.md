@@ -3,10 +3,8 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 
 
 <!-- ADD GIF demonstartion -->
-.....
 ![KeyWordSpotting](https://github.com/ivaste/KeyWordSpotting/blob/master/ReadmeImage.png)
 
-# Work in progress...
 
 [📈 Download Presentation PDF](https://github.com/ivaste/KeyWordSpotting/blob/master/Presentation/Presentation.pdf)
 
@@ -27,7 +25,7 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 - [License](#license)
 
 ## Overview
-.......
+End-to-End framework for the KeyWordSpotting task.......
 
 ## Usage
 .......
