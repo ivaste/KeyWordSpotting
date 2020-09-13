@@ -1,9 +1,6 @@
 Dataset/
 
-*.wav
 *.zip
-*.npy
-*.h5
 .ipynb_checkpoints/
 resources/.ipynb_checkpoints/
 sd_*/
