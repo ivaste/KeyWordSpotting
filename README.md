@@ -37,14 +37,15 @@ End-to-End framework for the KeyWordSpotting task.......
 ### Download best model
 If you just want to download and use the best model in your application you need to...
 
-'''
+
+```python
 import librosa
 import numpy as np
 import Models #Our models
 import LoadAndPreprocessDataset
 from tensorflow.keras.models import load_model
 .....
-'''
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
