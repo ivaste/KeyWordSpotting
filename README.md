@@ -10,7 +10,7 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 
 [📄 Download Paper PDF](https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/Key%20Word%20Spotting.pdf)
 
-[🕹️ Try Live Demo](https://github.com/ivaste/KeyWordSpotting/blob/master/LiveDemo.ipynb)
+[🕹️ Try Live Demo](https://colab.research.google.com/drive/15v66rkuL2hF0Ecg7gcD7RMVutVQCc0Nr)
 
 [📺 Watch Presentation]()
 
