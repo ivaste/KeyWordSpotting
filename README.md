@@ -27,9 +27,9 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 ## Overview
 End-to-End framework for the KeyWordSpotting task.......
 
-<p style="text-align: center;">
+<div style="text-align:center">
 <img src="https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/End-To-End.png" width="600" />
-</p>
+</div>
 
 ## Usage
 .......
