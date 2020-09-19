@@ -1,5 +1,5 @@
 # End-to-End Framework for Key-Word Spotting
-Detect a relatively small set of predefined keywords in a stream of user utterances.
+Detect a set of predefined keywords in an audioclip.
 
 
 <!-- ADD GIF demonstartion -->
@@ -25,10 +25,10 @@ Detect a relatively small set of predefined keywords in a stream of user utteran
 - [License](#license)
 
 ## Overview
-End-to-End framework for the KeyWordSpotting task.......
+The End-to-End framework for the KeyWordSpotting task is made of a sliding window of 1 second, a Voice Activity Detection module or a Silence Filter that select onfly the frames containig human voice, from those frames a feature extraction module will extract the Mel Spectogram or the Mel Cepstral Coefficients, this will be the input of the model. Finally a fusion rule aggregates all frames pedictions in a single one.
 
 <p align="center">
-<img src="https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/End-To-End.png" width="600" />
+<img src="https://github.com/ivaste/KeyWordSpotting/blob/master/Paper/End-To-End.png" width="500" />
 </p>
 
 ## Usage
