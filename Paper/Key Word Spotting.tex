@@ -362,12 +362,12 @@ In this paper, an end-to-end architecture for the Keyword Spotting Task has been
 The 1DCNN consists of five convolutional layers. Instead of using handcrafted static filterbanks (such as the ones used to extract MFCC features), the proposed 1DCNN learns the filters directly from the audio waveform. The other network receives as input features 80Mels, 40MFCCs or 40MFCCs + $\Delta$s and consists of four or five DSConv layers. Furthermore, the 1DCNN is faster than the other models, but unfortunately it does not reach the same accuracy.
 
 As we can see from the results, all the features work well but 40MFCCs seems slightly better that the others; the 1DCNN on raw waveform performed the worst way.
-We then reduced the number of parameters of the DSConv model by lowering the filters number for each convolution. We proposed three version of the DSConv model: \textit{Large}, \textit{Medium} and \textit{Small}.
+We then reduced the number of parameters of the DSConv model by lowering the filters number for each convolution. We proposed three versions of the DSConv model: \textit{Large}, \textit{Medium} and \textit{Small}.
 
 Our models achieve excellent results but we did not beat the state of the art accuracy of 97.4\% reached in [4]. In TABLE VII there is a summary of our models compared with the state of the art.
 We noticed that if we picked more frames per second, as described in the end-to-end architecture, the model would have had many “points of view” of the word, so in the real world it could actually perform better than the test accuracy measured. In various tests we made, the networks (even the 1DCNN, the one with the worst accuracy) captured all the words we were saying thank to the multiple windows – fusion rule technique.
 
-Further improvements could be explored with the SincConv model and the GDSConv one (that is very similar to SincConv).
+Further improvements could be explored with the SincConv model and the GDSConv one (that is very similar to DSConv).
 
 The code can be found on the following GitHub page: \texttt{https://github.com/ivaste/KeyWordSpotting}.
 
